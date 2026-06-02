@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HARBOR ESTATEへのお問い合わせ。物件探し、購入、売却、リノベーション、資産活用などお気軽にご相談ください。">
+  <title>お問い合わせ | HARBOR ESTATE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" aria-label="HARBOR ESTATE トップへ">
+        <img src="images/logo.png" alt="HARBOR ESTATE">
+      </a>
+      <nav class="site-nav" id="global-nav" aria-label="グローバルナビゲーション">
+        <a class="site-nav__link" href="properties.html">物件を探す</a>
+        <a class="site-nav__link" href="index.html#service">サービス</a>
+        <a class="site-nav__link" href="index.html#area">エリア紹介</a>
+        <a class="site-nav__link" href="company.html">会社概要</a>
+        <a class="site-nav__link" href="company.html#staff">スタッフ紹介</a>
+        <a class="site-nav__link" href="index.html#news">お知らせ</a>
+        <a class="site-nav__link" href="contact.html" aria-current="page">お問い合わせ</a>
+      </nav>
+      <a class="btn btn--primary site-header__cta" href="contact.html">無料相談する</a>
+      <button class="menu-button" type="button" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉する">
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__image">
+        <img src="images/hero-1.jpg" alt="海を望む明るいダイニング">
+      </div>
+      <div class="page-hero__inner">
+        <nav class="breadcrumb" aria-label="パンくず">
+          <a href="index.html">HOME</a>
+          <span>お問い合わせ</span>
+        </nav>
+        <h1 class="page-title">お問い合わせ</h1>
+        <p class="page-hero__lead">住まい探し・売却・リノベーションなど、どんなことでもお気軽にご相談ください。経験豊富なスタッフが丁寧にご対応いたします。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="section__label">CONTACT TYPE</span>
+            <h2 class="section__title">ご相談内容をお選びください</h2>
+            <p class="section__lead">複数選択も可能です。内容に合わせて担当スタッフよりご連絡いたします。</p>
+          </div>
+        </div>
+        <div class="contact-options fade-up">
+          <label class="option-card"><input type="checkbox" name="type" checked><span class="option-card__icon">⌂</span><span>物件を探してほしい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">⌕</span><span>購入について相談したい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">¥</span><span>売却について相談したい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">✎</span><span>リノベーションについて相談したい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">▦</span><span>資産活用について相談したい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">♡</span><span>その他のお問い合わせ</span></label>
+        </div>
+
+        <div class="contact-form-wrap fade-up" id="contact-form">
+          <form class="form-grid" action="#" method="post">
+            <div>
+              <span class="section__label">FORM</span>
+              <h2 class="section__title" style="font-size: 30px;">お問い合わせフォーム</h2>
+            </div>
+            <label class="form-field">
+              <span class="form-field__label">お名前 <span class="form-field__required">必須</span></span>
+              <input class="form-control" type="text" name="name" placeholder="例）佐藤 健太" autocomplete="name" required>
+            </label>
+            <label class="form-field">
+              <span class="form-field__label">フリガナ <span class="form-field__required">必須</span></span>
+              <input class="form-control" type="text" name="kana" placeholder="例）サトウ ケンタ" required>
+            </label>
+            <label class="form-field">
+              <span class="form-field__label">メールアドレス <span class="form-field__required">必須</span></span>
+              <input class="form-control" type="email" name="email" placeholder="例）example@mail.com" autocomplete="email" required>
+            </label>
+            <label class="form-field">
+              <span class="form-field__label">電話番号 <span class="form-field__required">必須</span></span>
+              <input class="form-control" type="tel" name="tel" placeholder="例）090-1234-5678" autocomplete="tel" required>
+            </label>
+            <fieldset class="form-field" style="border: 0; padding: 0;">
+              <legend class="form-field__label">ご希望の連絡方法 <span class="form-field__required">必須</span></legend>
+              <div class="radio-group">
+                <label><input type="radio" name="contact-method" checked>メール</label>
+                <label><input type="radio" name="contact-method">電話</label>
+                <label><input type="radio" name="contact-method">LINE</label>
+              </div>
+            </fieldset>
+            <label class="form-field">
+              <span class="form-field__label">お問い合わせ内容 <span class="form-field__required">必須</span></span>
+              <textarea class="form-control" name="message" placeholder="ご希望のエリアや条件、その他ご質問などをご入力ください。" required></textarea>
+            </label>
+            <fieldset class="form-field" style="border: 0; padding: 0;">
+              <legend class="form-field__label">ご来店希望</legend>
+              <div class="radio-group">
+                <label><input type="radio" name="visit">希望する</label>
+                <label><input type="radio" name="visit" checked>希望しない</label>
+              </div>
+            </fieldset>
+            <div class="form-grid form-grid--2">
+              <label class="form-field">
+                <span class="form-field__label">ご希望の来店日時</span>
+                <input class="form-control" type="date" name="visit-date">
+              </label>
+              <label class="form-field">
+                <span class="form-field__label">時間</span>
+                <select class="form-control" name="visit-time">
+                  <option>時間を選択</option>
+                  <option>10:00</option>
+                  <option>13:00</option>
+                  <option>15:00</option>
+                  <option>17:00</option>
+                </select>
+              </label>
+            </div>
+            <div class="checkbox-line">
+              <label><input type="checkbox" name="privacy" required>プライバシーポリシーに同意する <span class="form-field__required">必須</span></label>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit">確認画面へ進む</button>
+          </form>
+
+          <aside class="contact-side" aria-label="お問い合わせ補足">
+            <div class="contact-side__panel">
+              <span class="section__label">SUPPORT</span>
+              <h2 class="card-title">まずはお気軽にご相談ください</h2>
+              <p class="card-text">糸島・福岡エリアに精通したスタッフが、お客様のご希望に合わせて最適なご提案をいたします。しつこい営業は一切いたしませんのでご安心ください。</p>
+              <img src="images/consultation.jpg" alt="スタッフが相談に対応している様子">
+            </div>
+            <div class="phone-card">
+              <p class="card-text">お電話でのお問い合わせも受け付けております</p>
+              <a class="phone-card__tel" href="tel:0921234567">092-123-4567</a>
+              <p class="card-text">受付時間 / 10:00-18:00　定休日 / 水曜日</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="section__label">FAQ</span>
+            <h2 class="section__title">よくあるご質問</h2>
+          </div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-item__question" type="button" aria-expanded="false">相談や内見は無料ですか？</button><div class="faq-item__answer"><p>はい、無料です。条件の整理から内見のご案内まで、費用はかかりません。</p></div></div>
+          <div class="faq-item"><button class="faq-item__question" type="button" aria-expanded="false">まだ購入を決めていなくても相談できますか？</button><div class="faq-item__answer"><p>もちろんです。購入時期が未定の方も、資金計画やエリア選びからご相談いただけます。</p></div></div>
+          <div class="faq-item"><button class="faq-item__question" type="button" aria-expanded="false">遠方に住んでいても対応してもらえますか？</button><div class="faq-item__answer"><p>オンライン相談や写真・動画でのご案内にも対応しています。現地に来られない方もご相談ください。</p></div></div>
+          <div class="faq-item"><button class="faq-item__question" type="button" aria-expanded="false">しつこい営業はありませんか？</button><div class="faq-item__answer"><p>ありません。お客様のペースを大切にし、必要な情報を分かりやすくお届けします。</p></div></div>
+          <div class="faq-item"><button class="faq-item__question" type="button" aria-expanded="false">駐車場はありますか？</button><div class="faq-item__answer"><p>店舗前にお客様用駐車場をご用意しています。ご来店前にお知らせいただくとスムーズです。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="access">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="section__label">ACCESS</span>
+            <h2 class="section__title">店舗でもご相談いただけます</h2>
+          </div>
+        </div>
+        <div class="contact-access">
+          <div class="contact-access__card fade-up">
+            <img src="images/hero-1.jpg" alt="HARBOR ESTATE店舗の相談スペース">
+            <div>
+              <h3 class="card-title">店舗でのご相談も可能です</h3>
+              <p class="card-text">キッズスペースもご用意しておりますので、お子様連れでも安心してご来店ください。</p>
+              <a class="btn" href="company.html#access">店舗情報・アクセスを見る</a>
+            </div>
+          </div>
+          <div class="contact-access__card fade-up">
+            <div class="map-box" aria-label="HARBOR ESTATE所在地の地図"></div>
+            <div>
+              <h3 class="card-title">HARBOR ESTATE 株式会社</h3>
+              <p class="card-text">福岡県糸島市前原中央2丁目3-1<br>HARBOR BUILDING 1F</p>
+              <a class="btn" href="https://www.google.com/maps" target="_blank" rel="noopener">Google Mapで見る</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">理想の暮らしを、<br>一緒に探しませんか？</h2>
+          <p class="cta-band__lead">フォームでもお電話でも、お気軽にお問い合わせください。</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--primary" href="#contact-form">フォームで相談する</a>
+          <a class="btn btn--ghost" href="tel:0921234567">092-123-4567</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div><img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE"><p class="site-footer__text">福岡・糸島エリアの住まい探しはHARBOR ESTATEにお任せください。</p><div class="sns-list"><a href="#">IG</a><a href="#">LN</a><a href="#">YT</a><a href="mailto:info@example.com">ML</a></div></div>
+        <div><h3 class="site-footer__heading">物件を探す</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="properties.html">買う（戸建て）</a></li><li><a class="site-footer__link" href="properties.html">買う（マンション）</a></li><li><a class="site-footer__link" href="properties.html">借りる</a></li><li><a class="site-footer__link" href="properties.html">売却をご検討の方へ</a></li></ul></div>
+        <div><h3 class="site-footer__heading">サービス</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="index.html#service">購入サポート</a></li><li><a class="site-footer__link" href="index.html#service">売却サポート</a></li><li><a class="site-footer__link" href="index.html#service">リノベーション提案</a></li><li><a class="site-footer__link" href="index.html#service">住宅ローン相談</a></li></ul></div>
+        <div><h3 class="site-footer__heading">会社概要</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="company.html">会社概要</a></li><li><a class="site-footer__link" href="company.html#message">代表メッセージ</a></li><li><a class="site-footer__link" href="company.html#staff">スタッフ紹介</a></li><li><a class="site-footer__link" href="company.html#access">アクセス</a></li></ul></div>
+        <div class="footer-contact"><h3 class="site-footer__heading">お気軽にお問い合わせください</h3><a class="footer-contact__tel" href="tel:0921234567">092-123-4567</a><p class="site-footer__small">受付時間 / 10:00-18:00　定休日 / 水曜</p><a class="btn btn--ghost btn--block" href="contact.html">お問い合わせ</a><a class="btn btn--line btn--block" href="contact.html">LINEで相談する</a></div>
+      </div>
+      <div class="site-footer__bottom"><div class="site-footer__legal"><a class="site-footer__small" href="#">プライバシーポリシー</a><a class="site-footer__small" href="#">特定商取引法に基づく表記</a><a class="site-footer__small" href="#">サイトマップ</a></div><p class="site-footer__small">© HARBOR ESTATE All Rights Reserved.</p></div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="スマートフォン用メニュー">
+    <a href="index.html"><span aria-hidden="true">⌂</span>ホーム</a>
+    <a href="properties.html"><span aria-hidden="true">⌕</span>物件を探す</a>
+    <a href="properties.html"><span aria-hidden="true">♡</span>お気に入り</a>
+    <a href="contact.html"><span aria-hidden="true">☏</span>相談する</a>
+    <a href="#global-nav"><span aria-hidden="true">☰</span>メニュー</a>
+  </nav>
+
+  <script src="main.js"></script>
+</body>
+</html>

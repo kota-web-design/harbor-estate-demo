@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="福岡・糸島エリアの賃貸・売買物件一覧。海近、リノベーション、ペット可などライフスタイルに合う物件を探せます。">
+  <title>物件一覧 | HARBOR ESTATE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="properties-page">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" aria-label="HARBOR ESTATE トップへ">
+        <img src="images/logo.png" alt="HARBOR ESTATE">
+      </a>
+      <nav class="site-nav" id="global-nav" aria-label="グローバルナビゲーション">
+        <a class="site-nav__link" href="properties.html" aria-current="page">物件を探す</a>
+        <a class="site-nav__link" href="index.html#service">サービス</a>
+        <a class="site-nav__link" href="index.html#area">エリア紹介</a>
+        <a class="site-nav__link" href="company.html">会社概要</a>
+        <a class="site-nav__link" href="company.html#staff">スタッフ紹介</a>
+        <a class="site-nav__link" href="index.html#news">お知らせ</a>
+        <a class="site-nav__link" href="contact.html">お問い合わせ</a>
+      </nav>
+      <a class="btn btn--primary site-header__cta" href="contact.html">無料相談する</a>
+      <button class="menu-button" type="button" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉する">
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__image">
+        <img src="images/momochi.jpg" alt="福岡の海沿いの街並み">
+      </div>
+      <div class="page-hero__inner">
+        <h1 class="page-title">物件一覧</h1>
+        <p class="page-hero__lead">福岡・糸島エリアの住まい探しはHARBOR ESTATEにお任せください。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="パンくず">
+          <a href="index.html">HOME</a>
+          <span>物件を探す</span>
+        </nav>
+
+        <form class="search-box fade-up" action="#" method="get">
+          <div class="search-box__row">
+            <div class="segmented" aria-label="取引種別">
+              <label><input type="radio" name="deal" checked><span>買う</span></label>
+              <label><input type="radio" name="deal"><span>借りる</span></label>
+            </div>
+            <label class="form-field">
+              <span class="form-field__label">エリア</span>
+              <select class="form-control" name="area">
+                <option>すべてのエリア</option>
+                <option>糸島エリア</option>
+                <option>姪浜エリア</option>
+                <option>西新エリア</option>
+                <option>大濠エリア</option>
+              </select>
+            </label>
+            <label class="form-field">
+              <span class="form-field__label">物件種別</span>
+              <select class="form-control" name="type">
+                <option>すべて</option>
+                <option>新築戸建て</option>
+                <option>中古戸建て</option>
+                <option>マンション</option>
+                <option>土地</option>
+              </select>
+            </label>
+            <label class="form-field">
+              <span class="form-field__label">価格</span>
+              <select class="form-control" name="price">
+                <option>下限なし 〜 上限なし</option>
+                <option>〜 2,000万円</option>
+                <option>2,000万円 〜 4,000万円</option>
+                <option>4,000万円 〜</option>
+              </select>
+            </label>
+            <label class="form-field">
+              <span class="form-field__label">間取り</span>
+              <select class="form-control" name="layout">
+                <option>すべて</option>
+                <option>1LDK</option>
+                <option>2LDK</option>
+                <option>3LDK</option>
+                <option>4LDK以上</option>
+              </select>
+            </label>
+            <button class="btn btn--primary" type="submit">検索する</button>
+            <a class="link-arrow" href="contact.html">詳細条件を聞く</a>
+          </div>
+        </form>
+
+        <div class="section" style="padding-bottom: 0;">
+          <p class="section__label">人気のエリアから探す</p>
+          <div class="tag-list">
+            <a class="tag" href="#">糸島エリア</a>
+            <a class="tag" href="#">姪浜エリア</a>
+            <a class="tag" href="#">西新エリア</a>
+            <a class="tag" href="#">大濠エリア</a>
+            <a class="tag" href="#">唐津・筑前エリア</a>
+            <a class="tag" href="#">その他エリア</a>
+          </div>
+        </div>
+
+        <div class="properties-layout section" style="padding-bottom: 0;">
+          <div class="properties-main">
+            <div class="properties-main__head">
+              <p class="result-count">全 <strong>128</strong> 件</p>
+              <div class="sort-tools">
+                <label class="form-field" style="min-width: 180px;">
+                  <span class="form-field__label">並び替え</span>
+                  <select class="form-control" name="sort">
+                    <option>新着順</option>
+                    <option>価格が安い順</option>
+                    <option>価格が高い順</option>
+                    <option>駅徒歩が近い順</option>
+                  </select>
+                </label>
+                <button class="layout-button" type="button" aria-label="カード表示">▦</button>
+                <button class="layout-button" type="button" aria-label="リスト表示">☷</button>
+              </div>
+            </div>
+
+            <div class="property-grid">
+              <article class="property-card fade-up">
+                <a href="property-detail.html" class="property-card__image"><img src="images/interior-sea.jpg" alt="海を望む新築戸建ての室内"><span class="badge property-card__badge">新着</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加">♡</button>
+                <div class="property-card__body"><p class="property-card__area">新築戸建て</p><h2 class="property-card__title">糸島市志摩岐井 オーシャンビューの新築戸建て</h2><p class="property-card__price">3,980<small>万円</small></p><p class="property-card__meta">3LDK / 86.11㎡ / 筑肥線「筑前前原」駅 徒歩12分</p><div class="property-card__tags"><span class="property-card__tag">海が近い</span><span class="property-card__tag">駐車場2台</span><span class="property-card__tag">庭付き</span></div></div>
+              </article>
+              <article class="property-card fade-up">
+                <a href="property-detail.html" class="property-card__image"><img src="images/mansion-01.jpg" alt="リフォーム済みマンションの外観"><span class="badge property-card__badge">新着</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加">♡</button>
+                <div class="property-card__body"><p class="property-card__area">中古マンション</p><h2 class="property-card__title">福岡市西区姪浜 リフォーム済みマンション</h2><p class="property-card__price">2,580<small>万円</small></p><p class="property-card__meta">3LDK / 70.20㎡ / 地下鉄空港線「姪浜」駅 徒歩8分</p><div class="property-card__tags"><span class="property-card__tag">リノベーション</span><span class="property-card__tag">駅近</span><span class="property-card__tag">角部屋</span></div></div>
+              </article>
+              <article class="property-card fade-up">
+                <a href="property-detail.html" class="property-card__image"><img src="images/interior-01.jpg" alt="海を望むレジデンスの明るいリビング"><span class="badge property-card__badge">新築</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加">♡</button>
+                <div class="property-card__body"><p class="property-card__area">新築マンション</p><h2 class="property-card__title">福岡市西区今宿 海を望むレジデンス</h2><p class="property-card__price">2,980<small>万円</small></p><p class="property-card__meta">2LDK / 60.15㎡ / JR筑肥線「今宿」駅 徒歩5分</p><div class="property-card__tags"><span class="property-card__tag">オーシャンビュー</span><span class="property-card__tag">駅近</span></div></div>
+              </article>
+              <article class="property-card fade-up">
+                <a href="property-detail.html" class="property-card__image"><img src="images/house-01.jpg" alt="平屋の戸建て外観"><span class="badge property-card__badge">新着</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加">♡</button>
+                <div class="property-card__body"><p class="property-card__area">中古戸建て</p><h2 class="property-card__title">糸島市泊 自然に囲まれた平屋の家</h2><p class="property-card__price">3,280<small>万円</small></p><p class="property-card__meta">4LDK / 112.50㎡ / 筑肥線「波多江」駅 徒歩16分</p><div class="property-card__tags"><span class="property-card__tag">平屋</span><span class="property-card__tag">広い庭</span></div></div>
+              </article>
+              <article class="property-card fade-up">
+                <a href="property-detail.html" class="property-card__image"><img src="images/kitchen.jpg" alt="中古マンションのダイニングキッチン"><span class="badge property-card__badge">中古マンション</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加">♡</button>
+                <div class="property-card__body"><p class="property-card__area">大濠公園</p><h2 class="property-card__title">福岡市中央区大濠 大濠公園ビューのマンション</h2><p class="property-card__price">2,780<small>万円</small></p><p class="property-card__meta">2LDK / 65.32㎡ / 地下鉄空港線「大濠公園」駅 徒歩3分</p><div class="property-card__tags"><span class="property-card__tag">公園近く</span><span class="property-card__tag">リフォーム</span></div></div>
+              </article>
+              <article class="property-card fade-up">
+                <a href="property-detail.html" class="property-card__image"><img src="images/house-02.jpg" alt="西新駅近くの分譲マンション外観"><span class="badge property-card__badge">中古マンション</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加">♡</button>
+                <div class="property-card__body"><p class="property-card__area">西新駅周辺</p><h2 class="property-card__title">福岡市早良区西新 西新駅徒歩圏の好立地</h2><p class="property-card__price">2,180<small>万円</small></p><p class="property-card__meta">1LDK / 45.10㎡ / 地下鉄空港線「西新」駅 徒歩6分</p><div class="property-card__tags"><span class="property-card__tag">駅近</span><span class="property-card__tag">投資用OK</span></div></div>
+              </article>
+              <article class="property-card fade-up">
+                <a href="property-detail.html" class="property-card__image"><img src="images/living-02.jpg" alt="海まで歩ける戸建ての室内"><span class="badge property-card__badge">中古戸建て</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加">♡</button>
+                <div class="property-card__body"><p class="property-card__area">糸島市二丈深江</p><h2 class="property-card__title">海まで徒歩3分の戸建て</h2><p class="property-card__price">2,480<small>万円</small></p><p class="property-card__meta">3LDK / 92.74㎡ / 筑肥線「筑前深江」駅 徒歩10分</p><div class="property-card__tags"><span class="property-card__tag">海が近い</span><span class="property-card__tag">駐車場2台</span></div></div>
+              </article>
+              <article class="property-card fade-up">
+                <a href="property-detail.html" class="property-card__image"><img src="images/bedroom.jpg" alt="高層レジデンスの寝室"><span class="badge property-card__badge">中古マンション</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加">♡</button>
+                <div class="property-card__body"><p class="property-card__area">薬院エリア</p><h2 class="property-card__title">薬院エリアの新築レジデンス</h2><p class="property-card__price">3,680<small>万円</small></p><p class="property-card__meta">2LDK / 58.40㎡ / 地下鉄七隈線「薬院」駅 徒歩7分</p><div class="property-card__tags"><span class="property-card__tag">新築</span><span class="property-card__tag">ペット可</span></div></div>
+              </article>
+            </div>
+
+            <nav class="pagination" aria-label="ページネーション">
+              <a href="#" aria-label="前のページ">‹</a>
+              <span class="is-current">1</span>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <span>…</span>
+              <a href="#">11</a>
+              <a href="#" aria-label="次のページ">›</a>
+            </nav>
+          </div>
+
+          <aside class="sidebar" aria-label="物件検索サイドバー">
+            <a class="btn btn--primary btn--block" href="contact.html">保存した条件で検索する</a>
+            <div class="side-card">
+              <h2 class="side-card__title">エリアから探す</h2>
+              <div class="map-box" aria-label="エリアマップ"></div>
+              <ul class="side-list" style="margin-top: 16px;">
+                <li><a href="#">糸島エリア（24）</a></li>
+                <li><a href="#">姪浜エリア（28）</a></li>
+                <li><a href="#">西新エリア（18）</a></li>
+                <li><a href="#">大濠エリア（16）</a></li>
+                <li><a href="#">唐津・筑前エリア（22）</a></li>
+              </ul>
+            </div>
+            <div class="side-card">
+              <h2 class="side-card__title">物件種別</h2>
+              <div class="side-list">
+                <label><span><input type="checkbox" checked> すべての種別</span></label>
+                <label><span><input type="checkbox"> 新築戸建て（32）</span></label>
+                <label><span><input type="checkbox"> 中古戸建て（28）</span></label>
+                <label><span><input type="checkbox"> 中古マンション（34）</span></label>
+                <label><span><input type="checkbox"> 土地（8）</span></label>
+              </div>
+            </div>
+            <div class="side-card side-card--image">
+              <img src="images/consultation.jpg" alt="相談中のスタッフとお客様">
+              <div class="side-card__body">
+                <h2 class="side-card__title">希望の物件が見つからない方へ</h2>
+                <p class="card-text">未公開物件も含めて、ご希望に合う住まいをご提案いたします。</p>
+                <a class="btn btn--primary btn--block" href="contact.html">無料で相談する</a>
+              </div>
+            </div>
+            <div class="side-card">
+              <h2 class="side-card__title">物件資料をダウンロード</h2>
+              <p class="card-text">気になる物件の資料をまとめてお送りします。</p>
+              <a class="btn btn--block" href="contact.html">資料をダウンロード</a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="wide-cta fade-up">
+          <div>
+            <span class="section__label">PRIVATE LISTING</span>
+            <h2 class="section__title">非公開物件も多数ございます</h2>
+            <p class="section__lead">会員限定で、一般公開していない物件もご紹介しています。</p>
+            <a class="btn btn--primary" href="contact.html">会員登録して物件を見る</a>
+          </div>
+          <div class="wide-cta__image">
+            <img src="images/hero-1.jpg" alt="海沿いの明るい住まい">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div>
+          <img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE">
+          <p class="site-footer__text">福岡・糸島エリアの住まい探しはHARBOR ESTATEにお任せください。</p>
+          <div class="sns-list" aria-label="SNSリンク"><a href="#">IG</a><a href="#">LN</a><a href="#">YT</a><a href="mailto:info@example.com">ML</a></div>
+        </div>
+        <div><h3 class="site-footer__heading">物件を探す</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="properties.html">買う（戸建て）</a></li><li><a class="site-footer__link" href="properties.html">買う（マンション）</a></li><li><a class="site-footer__link" href="properties.html">借りる</a></li><li><a class="site-footer__link" href="properties.html">売却をご検討の方へ</a></li></ul></div>
+        <div><h3 class="site-footer__heading">サービス</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="index.html#service">購入サポート</a></li><li><a class="site-footer__link" href="index.html#service">売却サポート</a></li><li><a class="site-footer__link" href="index.html#service">リノベーション提案</a></li><li><a class="site-footer__link" href="index.html#service">ライフプラン相談</a></li></ul></div>
+        <div><h3 class="site-footer__heading">会社概要</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="company.html">会社概要</a></li><li><a class="site-footer__link" href="company.html#message">代表メッセージ</a></li><li><a class="site-footer__link" href="company.html#staff">スタッフ紹介</a></li><li><a class="site-footer__link" href="company.html#access">アクセス</a></li></ul></div>
+        <div class="footer-contact"><h3 class="site-footer__heading">お問い合わせはこちら</h3><a class="footer-contact__tel" href="tel:0921234567">092-123-4567</a><p class="site-footer__small">受付時間 / 10:00-18:00　定休日 / 水曜</p><a class="btn btn--ghost btn--block" href="contact.html">お問い合わせ</a><a class="btn btn--line btn--block" href="contact.html">LINEで相談する</a></div>
+      </div>
+      <div class="site-footer__bottom">
+        <div class="site-footer__legal"><a class="site-footer__small" href="#">プライバシーポリシー</a><a class="site-footer__small" href="#">特定商取引法に基づく表記</a><a class="site-footer__small" href="#">サイトマップ</a></div>
+        <p class="site-footer__small">© HARBOR ESTATE All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="スマートフォン用メニュー">
+    <a href="index.html"><span aria-hidden="true">⌂</span>ホーム</a>
+    <a href="properties.html"><span aria-hidden="true">⌕</span>物件を探す</a>
+    <a href="properties.html"><span aria-hidden="true">♡</span>お気に入り</a>
+    <a href="contact.html"><span aria-hidden="true">☏</span>相談する</a>
+    <a href="#global-nav"><span aria-hidden="true">☰</span>メニュー</a>
+  </nav>
+
+  <script src="main.js"></script>
+</body>
+</html>
