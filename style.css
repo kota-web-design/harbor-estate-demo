@@ -1086,7 +1086,7 @@ figure {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(6, 43, 69, 0.9), rgba(6, 43, 69, 0.52)), url("images/itoshima.jpg") center / cover;
+  background: linear-gradient(90deg, rgba(6, 43, 69, 0.9), rgba(6, 43, 69, 0.52)), url("images/fukuokashi.jpg") center / cover;
 }
 
 .cta-band__inner {
@@ -1479,11 +1479,33 @@ textarea.form-control {
   overflow: hidden;
 }
 
+.wide-cta--consult {
+  grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+  gap: 36px;
+  padding: 42px;
+  border: 1px solid var(--color-line);
+  background: linear-gradient(105deg, #edf5fb 0%, #ffffff 54%, #f7f7f5 100%);
+  box-shadow: var(--shadow-card);
+}
+
+.wide-cta--consult .section__title {
+  max-width: 520px;
+}
+
+.wide-cta--consult .section__lead {
+  margin-bottom: 24px;
+}
+
 .wide-cta__image img {
   width: 100%;
   aspect-ratio: 16 / 7;
   object-fit: cover;
   border-radius: var(--radius-md);
+}
+
+.wide-cta--consult .wide-cta__image img {
+  aspect-ratio: 16 / 8;
+  min-height: 260px;
 }
 
 .detail-layout {
