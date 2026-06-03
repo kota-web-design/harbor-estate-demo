@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=icons-20260603">
 </head>
 <body>
   <header class="site-header">
@@ -37,7 +37,7 @@
   <main>
     <section class="page-hero">
       <div class="page-hero__image">
-        <img src="images/hero-1.jpg" alt="海を望む明るいダイニング">
+        <img src="images/contact-hero.jpg" alt="住まい相談から理想の暮らしへつながる様子を描いた水彩イラスト" loading="lazy">
       </div>
       <div class="page-hero__inner">
         <nav class="breadcrumb" aria-label="パンくず">
@@ -59,12 +59,12 @@
           </div>
         </div>
         <div class="contact-options fade-up">
-          <label class="option-card"><input type="checkbox" name="type" checked><span class="option-card__icon">⌂</span><span>物件を探してほしい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">⌕</span><span>購入について相談したい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">¥</span><span>売却について相談したい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">✎</span><span>リノベーションについて相談したい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">▦</span><span>資産活用について相談したい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon">♡</span><span>その他のお問い合わせ</span></label>
+          <label class="option-card"><input type="checkbox" name="type" checked><span class="option-card__icon" data-icon="home" aria-hidden="true"></span><span>物件を探してほしい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="search" aria-hidden="true"></span><span>購入について相談したい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="yen" aria-hidden="true"></span><span>売却について相談したい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="hammer" aria-hidden="true"></span><span>リノベーションについて相談したい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="building" aria-hidden="true"></span><span>資産活用について相談したい</span></label>
+          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="messageCircle" aria-hidden="true"></span><span>その他のお問い合わせ</span></label>
         </div>
 
         <div class="contact-form-wrap fade-up" id="contact-form">
@@ -135,7 +135,7 @@
               <span class="section__label">SUPPORT</span>
               <h2 class="card-title">まずはお気軽にご相談ください</h2>
               <p class="card-text">福岡県内の主要エリアに精通したスタッフが、お客様のご希望に合わせて最適なご提案をいたします。しつこい営業は一切いたしませんのでご安心ください。</p>
-              <img src="images/consultation.jpg" alt="スタッフが相談に対応している様子">
+              <img src="images/contact-staff.jpg" alt="自然光が差し込む空間でスタッフがお客様の住まい相談を行う打ち合わせ風景" loading="lazy">
             </div>
             <div class="phone-card">
               <p class="card-text">お電話でのお問い合わせも受け付けております</p>
@@ -175,7 +175,7 @@
         </div>
         <div class="contact-access">
           <div class="contact-access__card fade-up">
-            <img src="images/hero-1.jpg" alt="HARBOR ESTATE店舗の相談スペース">
+            <img src="images/access_shop.jpg" alt="HARBOR ESTATE店舗外観イメージ" loading="lazy">
             <div>
               <h3 class="card-title">店舗でのご相談も可能です</h3>
               <p class="card-text">キッズスペースもご用意しておりますので、お子様連れでも安心してご来店ください。</p>
@@ -211,7 +211,7 @@
   <footer class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__grid">
-        <div><img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE"><p class="site-footer__text">福岡県内の主要エリアの住まい探しはHARBOR ESTATEにお任せください。</p><div class="sns-list"><a href="#">IG</a><a href="#">LN</a><a href="#">YT</a><a href="mailto:info@example.com">ML</a></div></div>
+        <div><img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE"><p class="site-footer__text">福岡県内の主要エリアの住まい探しはHARBOR ESTATEにお任せください。</p><div class="sns-list" aria-label="SNSリンク"><a href="#" aria-label="Instagram" data-icon="instagram"></a><a href="#" aria-label="LINE" data-icon="send"></a><a href="#" aria-label="YouTube" data-icon="youtube"></a><a href="mailto:info@example.com" aria-label="メール" data-icon="mail"></a></div></div>
         <div><h3 class="site-footer__heading">物件を探す</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="properties.html">買う（戸建て）</a></li><li><a class="site-footer__link" href="properties.html">買う（マンション）</a></li><li><a class="site-footer__link" href="properties.html">借りる</a></li><li><a class="site-footer__link" href="properties.html">売却をご検討の方へ</a></li></ul></div>
         <div><h3 class="site-footer__heading">サービス</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="index.html#service">購入サポート</a></li><li><a class="site-footer__link" href="index.html#service">売却サポート</a></li><li><a class="site-footer__link" href="index.html#service">リノベーション提案</a></li><li><a class="site-footer__link" href="index.html#service">住宅ローン相談</a></li></ul></div>
         <div><h3 class="site-footer__heading">対応エリア</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="index.html#area">福岡市地域</a></li><li><a class="site-footer__link" href="index.html#area">北九州地域</a></li><li><a class="site-footer__link" href="index.html#area">筑後地域</a></li><li><a class="site-footer__link" href="index.html#area">筑豊地域</a></li></ul></div>
@@ -222,13 +222,13 @@
   </footer>
 
   <nav class="bottom-nav" aria-label="スマートフォン用メニュー">
-    <a href="index.html"><span aria-hidden="true">⌂</span>ホーム</a>
-    <a href="properties.html"><span aria-hidden="true">⌕</span>物件を探す</a>
-    <a href="properties.html"><span aria-hidden="true">♡</span>お気に入り</a>
-    <a href="contact.html"><span aria-hidden="true">☏</span>相談する</a>
-    <a href="#global-nav"><span aria-hidden="true">☰</span>メニュー</a>
+    <a href="index.html"><span data-icon="home" aria-hidden="true"></span>ホーム</a>
+    <a href="properties.html"><span data-icon="search" aria-hidden="true"></span>物件を探す</a>
+    <a href="properties.html"><span data-icon="heart" aria-hidden="true"></span>お気に入り</a>
+    <a href="contact.html"><span data-icon="messageCircle" aria-hidden="true"></span>相談する</a>
+    <a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a>
   </nav>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=icons-20260603"></script>
 </body>
 </html>

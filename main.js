@@ -1,4 +1,73 @@
 (() => {
+  const iconPaths = {
+    home: '<path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2V10Z"/>',
+    building: '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/>',
+    waves: '<path d="M2 12c2.2-1.8 4.4-1.8 6.6 0s4.4 1.8 6.6 0 4.4-1.8 6.8 0"/><path d="M2 17c2.2-1.8 4.4-1.8 6.6 0s4.4 1.8 6.6 0 4.4-1.8 6.8 0"/>',
+    hammer: '<path d="m15 12-8.5 8.5a2.1 2.1 0 0 1-3-3L12 9"/><path d="m14 4 6 6"/><path d="m12 6 6 6"/><path d="m16 2 6 6-2 2-6-6 2-2Z"/>',
+    mapPin: '<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+    messageCircle: '<path d="M21 12a8.5 8.5 0 0 1-11.7 7.9L3 21l1.2-5.6A8.5 8.5 0 1 1 21 12Z"/>',
+    users: '<path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/>',
+    shieldCheck: '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/><path d="m9 12 2 2 4-5"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+    phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2.1Z"/>',
+    messages: '<path d="M21 14a4 4 0 0 1-4 4H9l-5 4v-4H3a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8Z"/><path d="M8 9h8"/><path d="M8 13h5"/>',
+    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+    filePen: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h6"/><path d="M14 2v6a2 2 0 0 0 2 2h4"/><path d="m16 19 4-4 2 2-4 4h-2v-2Z"/>',
+    key: '<circle cx="8" cy="15" r="4"/><path d="M12 15h9"/><path d="M18 15v-3"/><path d="M15 15v-2"/>',
+    yen: '<path d="m6 3 6 8 6-8"/><path d="M12 11v10"/><path d="M8 13h8"/><path d="M8 17h8"/>',
+    heart: '<path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 1 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/>',
+    menu: '<path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>',
+    grid: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+    list: '<path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/>',
+    deck: '<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 11h16"/><path d="M9 5v14"/><path d="M15 5v14"/>',
+    utensils: '<path d="M4 3v8"/><path d="M8 3v8"/><path d="M4 7h4"/><path d="M6 11v10"/><path d="M18 3v18"/><path d="M14 3h4a4 4 0 0 1 0 8h-4"/>',
+    sparkles: '<path d="M12 3l1.4 4.3L18 9l-4.6 1.7L12 15l-1.4-4.3L6 9l4.6-1.7L12 3Z"/><path d="M5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8L5 15Z"/><path d="M19 14l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z"/>',
+    bath: '<path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3Z"/><path d="M6 12V6a3 3 0 0 1 3-3h1"/><path d="M4 20l-1 2"/><path d="M20 20l1 2"/>',
+    droplets: '<path d="M7 16c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.8-4-7-4-7s-4 4.2-4 7Z"/><path d="M18 9c0 1.7 1.3 3 3 3 0-2.1-3-5-3-5s-3 2.9-3 5c1.7 0 3-1.3 3-3Z"/>',
+    doorOpen: '<path d="M13 4h4a2 2 0 0 1 2 2v14"/><path d="M13 22V2L5 4v16l8 2Z"/><path d="M9 12h.01"/><path d="M3 22h18"/>',
+    car: '<path d="M19 17H5l1.5-6h11L19 17Z"/><path d="M7 17v2"/><path d="M17 17v2"/><path d="M8 11l1.2-4h5.6L16 11"/>',
+    box: '<path d="m21 8-9-5-9 5 9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/>',
+    wifi: '<path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M12 20h.01"/>',
+    school: '<path d="M4 22V10l8-4 8 4v12"/><path d="M12 22V6"/><path d="M2 22h20"/><path d="M7 22v-5h10v5"/><path d="M8 13h.01"/><path d="M16 13h.01"/>',
+    shoppingBag: '<path d="M6 8h12l-1 13H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/>',
+    store: '<path d="M4 10h16l-1-6H5l-1 6Z"/><path d="M6 10v10h12V10"/><path d="M9 20v-5h6v5"/>',
+    instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>',
+    send: '<path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/>',
+    youtube: '<path d="M22 12s0-3-.4-4.4a3 3 0 0 0-2.1-2.1C17.7 5 12 5 12 5s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1C2 9 2 12 2 12s0 3 .4 4.4a3 3 0 0 0 2.1 2.1C6.3 19 12 19 12 19s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1C22 15 22 12 22 12Z"/><path d="m10 15 5-3-5-3v6Z"/>'
+  };
+
+  const createIconSvg = (name) => {
+    const path = iconPaths[name];
+    if (!path) return "";
+    return `<svg class="he-icon__svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${path}</svg>`;
+  };
+
+  document.querySelectorAll("[data-icon]").forEach((element) => {
+    const icon = createIconSvg(element.dataset.icon);
+    if (!icon) return;
+    element.classList.add("he-icon");
+    element.innerHTML = icon;
+  });
+
+  const prependIcon = (element, iconName) => {
+    if (element.querySelector(".he-icon")) return;
+    const icon = createIconSvg(iconName);
+    if (!icon) return;
+    const iconWrap = document.createElement("span");
+    iconWrap.className = "he-icon he-icon--inline";
+    iconWrap.setAttribute("aria-hidden", "true");
+    iconWrap.innerHTML = icon;
+    element.prepend(iconWrap);
+  };
+
+  document.querySelectorAll(".footer-contact__tel, .phone-card__tel").forEach((link) => {
+    prependIcon(link, "phone");
+  });
+
+  document.querySelectorAll(".btn--line").forEach((button) => {
+    prependIcon(button, "send");
+  });
+
   const header = document.querySelector(".site-header");
   const menuButton = document.querySelector(".menu-button");
   const nav = document.querySelector(".site-nav");

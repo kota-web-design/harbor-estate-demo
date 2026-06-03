@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=icons-20260603">
 </head>
 <body>
   <header class="site-header">
@@ -37,7 +37,7 @@
   <main>
     <section class="page-hero">
       <div class="page-hero__image">
-        <img src="images/itoshima.jpg" alt="福岡の海沿いの景色" loading="lazy">
+        <img src="images/company-hero.jpg" alt="福岡の不動産会社でスタッフがお客様に住まい相談を行う打ち合わせ風景" loading="lazy">
       </div>
       <div class="page-hero__inner">
         <nav class="breadcrumb" aria-label="パンくず">
@@ -52,7 +52,7 @@
     <section class="section">
       <div class="container company-concept">
         <div class="company-concept__image fade-up">
-          <img src="images/hero-1.jpg" alt="海を望む明るいリビング" loading="lazy">
+         <img src="images/concept.jpg" alt="福岡県内の対応エリアと暮らしの特徴を表現したイラストマップ" loading="lazy">
         </div>
         <div class="fade-up">
           <span class="section__label">CONCEPT</span>
@@ -61,15 +61,15 @@
         </div>
         <div class="values-list fade-up">
           <div class="values-list__item">
-            <span class="icon-box" aria-hidden="true">⌂</span>
+            <span class="icon-box" data-icon="mapPin" aria-hidden="true"></span>
             <div><h3 class="card-title">地域密着</h3><p class="card-text">福岡県内の主要エリアに対応する情報力とネットワーク。</p></div>
           </div>
           <div class="values-list__item">
-            <span class="icon-box" aria-hidden="true">☊</span>
+            <span class="icon-box" data-icon="users" aria-hidden="true"></span>
             <div><h3 class="card-title">暮らし提案</h3><p class="card-text">住まい探しからその先の暮らしまでトータルでサポート。</p></div>
           </div>
           <div class="values-list__item">
-            <span class="icon-box" aria-hidden="true">♡</span>
+            <span class="icon-box" data-icon="shieldCheck" aria-hidden="true"></span>
             <div><h3 class="card-title">安心と信頼</h3><p class="card-text">透明性のある情報提供と、誠実な対応をお約束します。</p></div>
           </div>
         </div>
@@ -134,7 +134,7 @@
           <span class="section__label">ACCESS</span>
           <h2 class="section__title">アクセス</h2>
           <div class="access-card" style="margin-top: 24px;">
-            <img src="images/hero-3.jpg" alt="HARBOR ESTATE店舗外観イメージ" loading="lazy">
+            <img src="images/access_shop.jpg" alt="HARBOR ESTATE店舗外観イメージ" loading="lazy">
             <div class="map-box" aria-label="HARBOR ESTATE所在地の地図"></div>
           </div>
           <p class="section__lead">地下鉄空港線「赤坂」駅より徒歩7分。福岡県内各地のご相談は、オンラインでも店舗でも承ります。</p>
@@ -160,7 +160,7 @@
   <footer class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__grid">
-        <div><img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE"><p class="site-footer__text">福岡県内の主要エリアの住まい探しはHARBOR ESTATEにお任せください。</p><div class="sns-list"><a href="#">IG</a><a href="#">LN</a><a href="#">YT</a><a href="mailto:info@example.com">ML</a></div></div>
+        <div><img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE"><p class="site-footer__text">福岡県内の主要エリアの住まい探しはHARBOR ESTATEにお任せください。</p><div class="sns-list" aria-label="SNSリンク"><a href="#" aria-label="Instagram" data-icon="instagram"></a><a href="#" aria-label="LINE" data-icon="send"></a><a href="#" aria-label="YouTube" data-icon="youtube"></a><a href="mailto:info@example.com" aria-label="メール" data-icon="mail"></a></div></div>
         <div><h3 class="site-footer__heading">物件を探す</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="properties.html">買う（戸建て）</a></li><li><a class="site-footer__link" href="properties.html">買う（マンション）</a></li><li><a class="site-footer__link" href="properties.html">借りる</a></li><li><a class="site-footer__link" href="properties.html">売却をご検討の方へ</a></li></ul></div>
         <div><h3 class="site-footer__heading">サービス</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="index.html#service">購入サポート</a></li><li><a class="site-footer__link" href="index.html#service">売却サポート</a></li><li><a class="site-footer__link" href="index.html#service">リノベーション提案</a></li><li><a class="site-footer__link" href="index.html#service">ライフプラン相談</a></li></ul></div>
         <div><h3 class="site-footer__heading">対応エリア</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="index.html#area">福岡市地域</a></li><li><a class="site-footer__link" href="index.html#area">北九州地域</a></li><li><a class="site-footer__link" href="index.html#area">筑後地域</a></li><li><a class="site-footer__link" href="index.html#area">筑豊地域</a></li></ul></div>
@@ -171,13 +171,13 @@
   </footer>
 
   <nav class="bottom-nav" aria-label="スマートフォン用メニュー">
-    <a href="index.html"><span aria-hidden="true">⌂</span>ホーム</a>
-    <a href="properties.html"><span aria-hidden="true">⌕</span>物件を探す</a>
-    <a href="properties.html"><span aria-hidden="true">♡</span>お気に入り</a>
-    <a href="contact.html"><span aria-hidden="true">☏</span>相談する</a>
-    <a href="#global-nav"><span aria-hidden="true">☰</span>メニュー</a>
+    <a href="index.html"><span data-icon="home" aria-hidden="true"></span>ホーム</a>
+    <a href="properties.html"><span data-icon="search" aria-hidden="true"></span>物件を探す</a>
+    <a href="properties.html"><span data-icon="heart" aria-hidden="true"></span>お気に入り</a>
+    <a href="contact.html"><span data-icon="messageCircle" aria-hidden="true"></span>相談する</a>
+    <a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a>
   </nav>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=icons-20260603"></script>
 </body>
 </html>

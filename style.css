@@ -90,6 +90,28 @@ figure {
   outline-offset: 3px;
 }
 
+.he-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: currentColor;
+  line-height: 0;
+}
+
+.he-icon__svg {
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--icon-stroke, 1.8);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.he-icon--inline {
+  --icon-size: 20px;
+}
+
 .container {
   width: var(--content);
   margin-inline: auto;
@@ -202,6 +224,7 @@ figure {
 }
 
 .btn--line {
+  --icon-size: 18px;
   border-color: rgba(255, 255, 255, 0.64);
   color: var(--color-white);
   background: rgba(255, 255, 255, 0.08);
@@ -601,6 +624,7 @@ figure {
 
 .service-card__icon,
 .icon-box {
+  --icon-size: 26px;
   display: grid;
   place-items: center;
   width: 52px;
@@ -608,7 +632,6 @@ figure {
   border: 1px solid rgba(18, 59, 93, 0.18);
   border-radius: 50%;
   color: var(--color-navy);
-  font-size: 24px;
   background: var(--color-soft-blue);
 }
 
@@ -664,9 +687,23 @@ figure {
 }
 
 .area-card__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--color-navy-dark);
   font-size: 18px;
   font-weight: 700;
+}
+
+.area-card__icon {
+  --icon-size: 17px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--color-navy);
+  background: var(--color-soft-blue);
 }
 
 .area-card__text {
@@ -740,6 +777,7 @@ figure {
 }
 
 .favorite-button {
+  --icon-size: 19px;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -750,7 +788,6 @@ figure {
   border: 1px solid rgba(18, 59, 93, 0.18);
   border-radius: 50%;
   color: var(--color-navy);
-  font-size: 18px;
   background: rgba(255, 255, 255, 0.92);
   transition: color 0.25s ease, transform 0.25s ease;
 }
@@ -944,9 +981,11 @@ figure {
 }
 
 .flow-card__icon {
+  --icon-size: 29px;
+  display: inline-grid;
+  place-items: center;
   margin-top: 14px;
   color: var(--color-navy);
-  font-size: 28px;
 }
 
 .flow-card__title {
@@ -1137,14 +1176,21 @@ figure {
 }
 
 .sns-list a {
+  --icon-size: 18px;
   display: grid;
   place-items: center;
   width: 34px;
   height: 34px;
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 50%;
-  font-size: 12px;
-  font-weight: 800;
+  color: var(--color-white);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.sns-list a:hover {
+  border-color: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .footer-contact {
@@ -1154,7 +1200,11 @@ figure {
 }
 
 .footer-contact__tel {
-  display: block;
+  --icon-size: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin: 8px 0 4px;
   color: var(--color-white);
   font-size: 28px;
@@ -1310,6 +1360,7 @@ textarea.form-control {
 }
 
 .layout-button {
+  --icon-size: 20px;
   display: grid;
   place-items: center;
   width: 40px;
@@ -1440,6 +1491,14 @@ textarea.form-control {
   grid-template-columns: minmax(0, 1fr) 300px;
   gap: 36px;
   align-items: start;
+}
+
+.detail-main,
+.detail-hero,
+.detail-hero > *,
+.thumb-gallery,
+.gallery-grid {
+  min-width: 0;
 }
 
 .detail-hero {
@@ -1582,6 +1641,7 @@ textarea.form-control {
 }
 
 .feature-item {
+  --icon-size: 28px;
   display: grid;
   gap: 8px;
   place-items: center;
@@ -1596,8 +1656,14 @@ textarea.form-control {
   background: var(--color-white);
 }
 
-.feature-item span:first-child {
-  font-size: 26px;
+.feature-item__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--color-navy);
+  background: var(--color-soft-blue);
 }
 
 .environment-list {
@@ -1607,10 +1673,23 @@ textarea.form-control {
 }
 
 .environment-item {
+  --icon-size: 23px;
+  display: grid;
+  gap: 8px;
   padding: 18px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-sm);
   background: var(--color-white);
+}
+
+.environment-item__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--color-navy);
+  background: var(--color-soft-blue);
 }
 
 .environment-item__name {
@@ -1818,8 +1897,15 @@ textarea.form-control {
 }
 
 .option-card__icon {
+  --icon-size: 28px;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(18, 59, 93, 0.14);
+  border-radius: 50%;
   color: var(--color-navy);
-  font-size: 30px;
+  background: var(--color-soft-blue);
 }
 
 .contact-form-wrap {
@@ -1894,7 +1980,11 @@ textarea.form-control {
 }
 
 .phone-card__tel {
-  display: block;
+  --icon-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   color: var(--color-navy);
   font-size: 34px;
   font-weight: 800;
@@ -2285,7 +2375,7 @@ textarea.form-control {
   }
 
   .bottom-nav span {
-    font-size: 18px;
+    --icon-size: 19px;
     line-height: 1;
   }
 }
