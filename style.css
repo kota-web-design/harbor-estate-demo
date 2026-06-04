@@ -610,6 +610,17 @@ figure {
   font-weight: 500;
 }
 
+.properties-page .page-title {
+  font-size: clamp(34px, 4.2vw, 54px);
+  letter-spacing: 0.04em;
+}
+
+.properties-page .page-hero__lead {
+  max-width: 520px;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 2;
+}
+
 .concept-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -954,6 +965,21 @@ figure {
   padding: 10px 14px;
 }
 
+#featured .property-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#featured .property-card__body {
+  flex: 1;
+  align-content: start;
+}
+
+#featured .property-card__button {
+  margin-top: auto;
+}
+
 .lifestyle-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -1026,11 +1052,18 @@ figure {
   background: var(--color-white);
 }
 
+.staff-card__image {
+  overflow: hidden;
+  background: #f1f6fa;
+}
+
 .staff-card__image img {
   width: 100%;
   aspect-ratio: 4 / 3.2;
   object-fit: cover;
-  object-position: center top;
+  object-position: 62% 22%;
+  transform: scale(1.08);
+  transform-origin: 62% 22%;
 }
 
 .staff-card__body {
@@ -1062,11 +1095,15 @@ figure {
 
 .flow-card {
   position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: start;
   min-height: 178px;
   padding: 22px 18px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: var(--color-white);
+  text-align: center;
 }
 
 .flow-card:not(:last-child)::after {
@@ -1083,13 +1120,14 @@ figure {
   color: var(--color-navy);
   font-size: 13px;
   font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .flow-card__icon {
   --icon-size: 29px;
   display: inline-grid;
   place-items: center;
-  margin-top: 14px;
+  margin-top: 12px;
   color: var(--color-navy);
 }
 
@@ -1273,30 +1311,6 @@ figure {
 
 .site-footer__link:hover {
   color: var(--color-white);
-}
-
-.sns-list {
-  display: flex;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.sns-list a {
-  --icon-size: 18px;
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  border-radius: 50%;
-  color: var(--color-white);
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-}
-
-.sns-list a:hover {
-  border-color: rgba(255, 255, 255, 0.74);
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
 }
 
 .footer-contact {
@@ -2903,6 +2917,16 @@ textarea.form-control {
 
   .page-title {
     font-size: 38px;
+  }
+
+  .properties-page .page-title {
+    font-size: 34px;
+  }
+
+  .properties-page .page-hero__lead {
+    max-width: 360px;
+    font-size: 14px;
+    line-height: 1.85;
   }
 
   .concept-grid,

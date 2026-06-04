@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="福岡県内の主要エリアの賃貸・売買物件一覧。海近、リノベーション、ペット可などライフスタイルに合う物件を探せます。">
-  <title>物件一覧 | HARBOR ESTATE</title>
+  <meta name="description" content="福岡県内の主要エリアで売買・賃貸物件を探せるHARBOR ESTATEの物件検索ページです。暮らし方に合う住まいをご提案します。">
+  <title>物件を探す | HARBOR ESTATE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=line-20260604">
+  <link rel="stylesheet" href="style.css?v=staff-flow-20260604">
 </head>
 <body class="properties-page">
   <header class="site-header">
@@ -44,8 +44,8 @@
         <img src="images/properties/properties_hero.jpg" alt="物件一覧ページの福岡らしい都市と海のイメージ" loading="lazy">
       </div>
       <div class="page-hero__inner">
-        <h1 class="page-title">物件一覧</h1>
-        <p class="page-hero__lead">福岡市・北九州・筑後・筑豊エリアの住まい探しは、HARBOR ESTATEにお任せください。</p>
+        <h1 class="page-title">物件を探す</h1>
+        <p class="page-hero__lead">福岡県内の売買・賃貸物件を、エリアや暮らし方に合わせて探せます。</p>
       </div>
     </section>
 
@@ -103,9 +103,18 @@
               <span class="form-field__label">間取り</span>
               <select class="form-control" name="layout" data-dynamic-select="layout" data-filter="layout">
                 <option value="all">すべて</option>
+                <option value="ワンルーム">ワンルーム</option>
+                <option value="1K">1K</option>
+                <option value="1DK">1DK</option>
                 <option value="1LDK">1LDK</option>
+                <option value="2K">2K</option>
+                <option value="2DK">2DK</option>
                 <option value="2LDK">2LDK</option>
+                <option value="3K">3K</option>
+                <option value="3DK">3DK</option>
                 <option value="3LDK">3LDK</option>
+                <option value="4K">4K</option>
+                <option value="4DK">4DK</option>
                 <option value="4LDK以上">4LDK以上</option>
               </select>
             </label>
@@ -136,26 +145,49 @@
           </div>
 
           <details class="conditions-accordion" data-conditions-accordion>
-            <summary>その他の条件 <span>駅徒歩・設備・暮らし条件を追加</span></summary>
+            <summary>その他の条件 <span>設備・ライフライン・暮らし条件を追加</span></summary>
             <div class="conditions-panel">
               <fieldset class="condition-group">
                 <legend>基本条件</legend>
                 <div class="condition-tags">
                   <label class="condition-chip"><input type="checkbox" name="condition" value="station"><span>駅徒歩10分以内</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="parking"><span>駐車場あり</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="parking2"><span>駐車場2台可</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="pet"><span>ペット可</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="new"><span>新築</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="renovated"><span>リノベーション済み</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="immediate"><span>即入居可</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="noGuarantor"><span>保証人不要</span></label>
                 </div>
               </fieldset>
               <fieldset class="condition-group">
-                <legend>設備</legend>
+                <legend>設備・セキュリティ</legend>
                 <div class="condition-tags">
                   <label class="condition-chip"><input type="checkbox" name="condition" value="autolock"><span>オートロック</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="delivery"><span>宅配ボックス</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="aircon"><span>エアコン</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="internet"><span>インターネット対応</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="monitorIntercom"><span>TVモニターホン</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="elevator"><span>エレベーター</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="condition-group">
+                <legend>水回り・収納</legend>
+                <div class="condition-tags">
                   <label class="condition-chip"><input type="checkbox" name="condition" value="indoorLaundry"><span>室内洗濯機置場</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="vanity"><span>独立洗面台</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="bathDryer"><span>浴室乾燥機</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="washlet"><span>温水洗浄便座</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="counterKitchen"><span>対面キッチン</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="closet"><span>ウォークイン収納</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="condition-group">
+                <legend>ライフライン</legend>
+                <div class="condition-tags">
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="cityGas"><span>都市ガス</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="propane"><span>プロパンガス</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="allElectric"><span>オール電化</span></label>
                 </div>
               </fieldset>
               <fieldset class="condition-group">
@@ -165,6 +197,8 @@
                   <label class="condition-chip"><input type="checkbox" name="condition" value="garden"><span>庭付き</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="workspace"><span>ワークスペースあり</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="south"><span>南向き</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="corner"><span>角部屋</span></label>
+                  <label class="condition-chip"><input type="checkbox" name="condition" value="balcony"><span>バルコニー</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="nature"><span>自然が近い</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="ohori"><span>大濠公園エリア</span></label>
                   <label class="condition-chip"><input type="checkbox" name="condition" value="itoshima"><span>糸島エリア</span></label>
@@ -175,7 +209,6 @@
 
           <div class="search-box__foot">
             <button class="btn btn--ghost" type="button" data-reset-search>条件をリセット</button>
-            <a class="link-arrow" href="contact.html">細かな条件を相談する</a>
           </div>
         </form>
 
@@ -200,44 +233,49 @@
             </div>
 
             <div class="property-grid" data-property-grid>
-              <article class="property-card fade-up" data-property-card data-id="he-001" data-deal="buy" data-area="福岡市地域" data-type="戸建て" data-price="3980" data-layout="3LDK" data-size="86.11" data-date="20260601" data-conditions="station parking new ocean garden south itoshima nature">
+              <article class="property-card fade-up" data-property-card data-id="he-001" data-deal="buy" data-area="福岡市地域" data-type="戸建て" data-price="3980" data-layout="3LDK" data-size="86.11" data-date="20260601" data-conditions="station parking parking2 new ocean garden south itoshima nature cityGas counterKitchen vanity washlet monitorIntercom">
                 <a href="property-detail.html" class="property-card__image"><img src="images/properties/house01.jpg" alt="福岡市西区今宿の海を望むモダンデザインの新築戸建て外観" loading="lazy"><span class="badge property-card__badge">新着</span></a>
                 <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
 
                 <div class="property-card__body"><p class="property-card__area">福岡市地域 / 福岡市西区</p><h2 class="property-card__title">福岡市西区今宿 オーシャンビューの新築戸建て</h2><p class="property-card__price">3,980<small>万円</small></p><div class="property-card__info"><span>3LDK</span><span>86.11㎡</span><span>今宿駅 徒歩12分</span></div><div class="property-card__tags"><span class="property-card__tag">海が近い</span><span class="property-card__tag">駐車場2台</span><span class="property-card__tag">庭付き</span></div><a class="property-card__detail-link" href="property-detail.html">詳細を見る</a></div>
               </article>
-              <article class="property-card fade-up" data-property-card data-id="he-002" data-deal="buy" data-area="福岡市地域" data-type="マンション" data-price="2580" data-layout="3LDK" data-size="70.20" data-date="20260522" data-conditions="station parking renovated autolock delivery aircon indoorLaundry bathDryer">
+              <article class="property-card fade-up" data-property-card data-id="he-002" data-deal="buy" data-area="福岡市地域" data-type="マンション" data-price="2580" data-layout="3LDK" data-size="70.20" data-date="20260522" data-conditions="station parking renovated autolock delivery aircon indoorLaundry bathDryer cityGas vanity washlet elevator balcony corner">
                 <a href="property-unavailable.html" class="property-card__image"><img src="images/properties/house02.jpg" alt="福岡市西区姪浜のリフォーム済みマンションの開放感あるLDK空間" loading="lazy"><span class="badge property-card__badge">新着</span></a>
                 <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
                 <div class="property-card__body"><p class="property-card__area">福岡市地域 / 福岡市西区</p><h2 class="property-card__title">福岡市西区姪浜 リフォーム済みマンション</h2><p class="property-card__price">2,580<small>万円</small></p><div class="property-card__info"><span>3LDK</span><span>70.20㎡</span><span>姪浜駅 徒歩8分</span></div><div class="property-card__tags"><span class="property-card__tag">リノベーション</span><span class="property-card__tag">駅近</span><span class="property-card__tag">角部屋</span></div><a class="property-card__detail-link" href="property-unavailable.html">詳細を見る</a></div>
               </article>
-              <article class="property-card fade-up" data-property-card data-id="he-003" data-deal="rent" data-area="福岡市地域" data-type="マンション" data-price="12.8" data-layout="2LDK" data-size="60.15" data-date="20260528" data-conditions="station pet autolock delivery aircon indoorLaundry ocean workspace south itoshima">
+              <article class="property-card fade-up" data-property-card data-id="he-003" data-deal="rent" data-area="福岡市地域" data-type="マンション" data-price="12.8" data-layout="2LDK" data-size="60.15" data-date="20260528" data-conditions="station pet autolock delivery aircon indoorLaundry ocean workspace south itoshima cityGas vanity bathDryer internet balcony monitorIntercom">
                 <a href="property-rent-detail.html" class="property-card__image"><img src="images/properties/house03.jpg" alt="福岡市西区今宿の海を望む開放感あるレジデンスのリビング空間" loading="lazy"><span class="badge property-card__badge">新築</span></a>
                 <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
                 <div class="property-card__body"><p class="property-card__area">福岡市地域 / 福岡市西区</p><h2 class="property-card__title">福岡市西区今宿 海を望む賃貸レジデンス</h2><p class="property-card__price">12.8<small>万円/月</small></p><div class="property-card__info"><span>2LDK</span><span>60.15㎡</span><span>今宿駅 徒歩5分</span></div><div class="property-card__tags"><span class="property-card__tag">オーシャンビュー</span><span class="property-card__tag">ペット可</span></div><a class="property-card__detail-link" href="property-rent-detail.html">詳細を見る</a></div>
               </article>
-              <article class="property-card fade-up" data-property-card data-id="he-004" data-deal="buy" data-area="筑後地域" data-type="戸建て" data-price="3280" data-layout="4LDK以上" data-size="112.50" data-date="20260518" data-conditions="parking new garden south nature">
+              <article class="property-card fade-up" data-property-card data-id="he-009" data-deal="rent" data-area="北九州地域" data-type="アパート" data-price="7.6" data-layout="1LDK" data-size="42.80" data-date="20260524" data-conditions="station parking aircon indoorLaundry vanity cityGas bathDryer internet balcony monitorIntercom">
+                <a href="property-unavailable.html" class="property-card__image"><img src="images/properties/house06.jpg" alt="北九州市小倉北区の駅徒歩圏にある明るい1LDK賃貸アパートの室内空間" loading="lazy"><span class="badge property-card__badge">賃貸</span></a>
+                <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
+                <div class="property-card__body"><p class="property-card__area">北九州地域 / 北九州市小倉北区</p><h2 class="property-card__title">小倉北区 駅徒歩圏の1LDK賃貸アパート</h2><p class="property-card__price">7.6<small>万円/月</small></p><div class="property-card__info"><span>1LDK</span><span>42.80㎡</span><span>小倉駅 徒歩9分</span></div><div class="property-card__tags"><span class="property-card__tag">都市ガス</span><span class="property-card__tag">独立洗面台</span></div><a class="property-card__detail-link" href="property-unavailable.html">詳細を見る</a></div>
+              </article>
+              <article class="property-card fade-up" data-property-card data-id="he-004" data-deal="buy" data-area="筑後地域" data-type="戸建て" data-price="3280" data-layout="4LDK以上" data-size="112.50" data-date="20260518" data-conditions="parking parking2 new garden south nature propane counterKitchen vanity washlet immediate">
                 <a href="property-unavailable.html" class="property-card__image"><img src="images/properties/house04.jpg" alt="久留米市御井町の自然に囲まれた平屋住宅と開放感ある暮らし空間" loading="lazy"><span class="badge property-card__badge">新着</span></a>
                 <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
                 <div class="property-card__body"><p class="property-card__area">筑後地域 / 久留米市</p><h2 class="property-card__title">久留米市御井町 自然に囲まれた平屋の家</h2><p class="property-card__price">3,280<small>万円</small></p><div class="property-card__info"><span>4LDK以上</span><span>112.50㎡</span><span>久留米大学前駅 徒歩16分</span></div><div class="property-card__tags"><span class="property-card__tag">平屋</span><span class="property-card__tag">広い庭</span></div><a class="property-card__detail-link" href="property-unavailable.html">詳細を見る</a></div>
               </article>
-              <article class="property-card fade-up" data-property-card data-id="he-005" data-deal="buy" data-area="福岡市地域" data-type="マンション" data-price="2780" data-layout="2LDK" data-size="65.32" data-date="20260510" data-conditions="station parking renovated autolock delivery aircon bathDryer south ohori">
+              <article class="property-card fade-up" data-property-card data-id="he-005" data-deal="buy" data-area="福岡市地域" data-type="マンション" data-price="2780" data-layout="2LDK" data-size="65.32" data-date="20260510" data-conditions="station parking renovated autolock delivery aircon bathDryer south ohori cityGas vanity washlet elevator balcony">
                 <a href="property-unavailable.html" class="property-card__image"><img src="images/properties/house05.jpg" alt="福岡市中央区大濠の公園ビューを楽しめる開放感あるマンションLDK" loading="lazy"><span class="badge property-card__badge">中古マンション</span></a>
                 <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
                 <div class="property-card__body"><p class="property-card__area">福岡市地域 / 福岡市中央区</p><h2 class="property-card__title">福岡市中央区大濠 大濠公園ビューのマンション</h2><p class="property-card__price">2,780<small>万円</small></p><div class="property-card__info"><span>2LDK</span><span>65.32㎡</span><span>大濠公園駅 徒歩3分</span></div><div class="property-card__tags"><span class="property-card__tag">公園近く</span><span class="property-card__tag">リフォーム</span></div><a class="property-card__detail-link" href="property-unavailable.html">詳細を見る</a></div>
               </article>
-              <article class="property-card fade-up" data-property-card data-id="he-006" data-deal="buy" data-area="北九州地域" data-type="投資用物件" data-price="2180" data-layout="1LDK" data-size="45.10" data-date="20260505" data-conditions="station autolock delivery aircon indoorLaundry">
+              <article class="property-card fade-up" data-property-card data-id="he-006" data-deal="buy" data-area="北九州地域" data-type="投資用物件" data-price="2180" data-layout="1LDK" data-size="45.10" data-date="20260505" data-conditions="station autolock delivery aircon indoorLaundry cityGas elevator internet balcony">
                 <a href="property-unavailable.html" class="property-card__image"><img src="images/properties/house06.jpg" alt="北九州市小倉北区の駅徒歩圏にある都市型マンションと落ち着いた室内空間" loading="lazy"><span class="badge property-card__badge">中古マンション</span></a>
                 <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
                 <div class="property-card__body"><p class="property-card__area">北九州地域 / 北九州市小倉北区</p><h2 class="property-card__title">北九州市小倉北区 駅徒歩圏の好立地マンション</h2><p class="property-card__price">2,180<small>万円</small></p><div class="property-card__info"><span>1LDK</span><span>45.10㎡</span><span>小倉駅 徒歩6分</span></div><div class="property-card__tags"><span class="property-card__tag">駅近</span><span class="property-card__tag">投資用OK</span></div><a class="property-card__detail-link" href="property-unavailable.html">詳細を見る</a></div>
               </article>
-              <article class="property-card fade-up" data-property-card data-id="he-007" data-deal="buy" data-area="筑豊地域" data-type="リノベ向き物件" data-price="2480" data-layout="3LDK" data-size="92.74" data-date="20260427" data-conditions="parking renovated garden nature">
+              <article class="property-card fade-up" data-property-card data-id="he-007" data-deal="buy" data-area="筑豊地域" data-type="リノベ向き物件" data-price="2480" data-layout="3LDK" data-size="92.74" data-date="20260427" data-conditions="parking parking2 renovated garden nature propane vanity washlet immediate">
                 <a href="property-unavailable.html" class="property-card__image"><img src="images/properties/house07.jpg" alt="飯塚市幸袋の自然に囲まれたリノベ向き戸建てと落ち着いた住空間" loading="lazy"><span class="badge property-card__badge">中古戸建て</span></a>
                 <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
                 <div class="property-card__body"><p class="property-card__area">筑豊地域 / 飯塚市</p><h2 class="property-card__title">飯塚市幸袋 リノベ向き戸建て</h2><p class="property-card__price">2,480<small>万円</small></p><div class="property-card__info"><span>3LDK</span><span>92.74㎡</span><span>飯塚駅 車10分</span></div><div class="property-card__tags"><span class="property-card__tag">リノベ向き</span><span class="property-card__tag">駐車場2台</span></div><a class="property-card__detail-link" href="property-unavailable.html">詳細を見る</a></div>
               </article>
-              <article class="property-card fade-up" data-property-card data-id="he-008" data-deal="rent" data-area="筑後地域" data-type="マンション" data-price="11.8" data-layout="2LDK" data-size="58.40" data-date="20260516" data-conditions="station pet new autolock delivery aircon indoorLaundry bathDryer south">
-                <a href="property-unavailable.html" class="property-card__image"><img src="images/properties/house08.jpg"  alt="久留米市中心部にある新築レジデンスと明るく上質な室内空間" loading="lazy"><span class="badge property-card__badge">中古マンション</span></a>
+              <article class="property-card fade-up" data-property-card data-id="he-008" data-deal="rent" data-area="筑後地域" data-type="マンション" data-price="11.8" data-layout="2LDK" data-size="58.40" data-date="20260516" data-conditions="station pet new autolock delivery aircon indoorLaundry bathDryer south cityGas vanity internet elevator">
+                <a href="property-unavailable.html" class="property-card__image"><img src="images/properties/house08.jpg" alt="久留米市中心部にある新築レジデンスと明るく上質な室内空間" loading="lazy"><span class="badge property-card__badge">賃貸</span></a>
                 <button class="favorite-button" type="button" aria-label="お気に入りに追加" aria-pressed="false" data-icon="heart"></button>
                 <div class="property-card__body"><p class="property-card__area">筑後地域 / 久留米市</p><h2 class="property-card__title">久留米市中心部の新築賃貸レジデンス</h2><p class="property-card__price">11.8<small>万円/月</small></p><div class="property-card__info"><span>2LDK</span><span>58.40㎡</span><span>西鉄久留米駅 徒歩7分</span></div><div class="property-card__tags"><span class="property-card__tag">新築</span><span class="property-card__tag">ペット可</span></div><a class="property-card__detail-link" href="property-unavailable.html">詳細を見る</a></div>
               </article>
@@ -258,7 +296,6 @@
           </div>
 
           <aside class="sidebar" aria-label="物件検索サイドバー">
-            <a class="btn btn--primary btn--block" href="contact.html">希望条件を相談する</a>
             <div class="side-card">
               <h2 class="side-card__title">エリアから探す</h2>
               <div class="map-box" aria-label="エリアマップ"></div>
@@ -279,11 +316,6 @@
                 <label><span><input type="checkbox"> 中古マンション（34）</span></label>
                 <label><span><input type="checkbox"> 土地（8）</span></label>
               </div>
-            </div>
-            <div class="side-card side-card--consult">
-              <h2 class="side-card__title">条件に合う住まいをご相談ください</h2>
-              <p class="card-text">掲載中の物件だけでなく、ご希望条件に近い住まい情報もご提案しています。</p>
-              <a class="btn btn--primary btn--block" href="contact.html">無料で相談する</a>
             </div>
           </aside>
         </div>
@@ -309,11 +341,6 @@
         <div class="site-footer__brand">
           <img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE">
           <p class="site-footer__text">福岡県内の主要エリアの住まい探しはHARBOR ESTATEにお任せください。</p>
-          <div class="sns-list" aria-label="SNSリンク">
-            <a href="#" aria-label="Instagram" data-icon="instagram"></a>
-            <a href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener" aria-label="LINE公式アカウント" data-icon="send"></a>
-            <a href="mailto:info@example.com" aria-label="メール" data-icon="mail"></a>
-          </div>
         </div>
         <div>
           <h3 class="site-footer__heading">サイトメニュー</h3>
@@ -361,6 +388,6 @@
     <a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a>
   </nav>
 
-  <script src="main.js?v=line-20260604"></script>
+  <script src="main.js?v=staff-flow-20260604"></script>
 </body>
 </html>
