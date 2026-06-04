@@ -165,6 +165,261 @@
     });
   });
 
+  const propertySearch = document.querySelector("[data-property-search]");
+  const propertyGrid = document.querySelector("[data-property-grid]");
+  const propertyCards = propertyGrid ? [...propertyGrid.querySelectorAll("[data-property-card]")] : [];
+  const resultCount = document.querySelector("[data-result-count]");
+  const resultNote = document.querySelector("[data-result-note]");
+  const sortSelect = document.querySelector("[data-sort-select]");
+
+  if (propertySearch && propertyGrid && propertyCards.length) {
+    const searchOptions = {
+      buy: {
+        summary: "福岡県内の売買物件から、条件に合う住まいを探せます。",
+        priceLabel: "価格",
+        baseCount: 128,
+        type: [
+          ["all", "すべて"],
+          ["マンション", "マンション"],
+          ["戸建て", "戸建て"],
+          ["土地", "土地"],
+          ["リノベ向き物件", "リノベ向き物件"],
+          ["投資用物件", "投資用物件"]
+        ],
+        price: [
+          ["all", "下限なし 〜 上限なし"],
+          ["buy-under-1000", "1,000万円以下"],
+          ["buy-1000-2000", "1,000万円〜2,000万円"],
+          ["buy-2000-3000", "2,000万円〜3,000万円"],
+          ["buy-3000-5000", "3,000万円〜5,000万円"],
+          ["buy-over-5000", "5,000万円以上"]
+        ],
+        layout: [
+          ["all", "すべて"],
+          ["1LDK", "1LDK"],
+          ["2LDK", "2LDK"],
+          ["3LDK", "3LDK"],
+          ["4LDK以上", "4LDK以上"]
+        ]
+      },
+      rent: {
+        summary: "福岡県内の賃貸物件から、暮らし方に合うお部屋を探せます。",
+        priceLabel: "賃料",
+        baseCount: 86,
+        type: [
+          ["all", "すべて"],
+          ["アパート", "アパート"],
+          ["マンション", "マンション"],
+          ["戸建て賃貸", "戸建て賃貸"],
+          ["店舗・事務所", "店舗・事務所"],
+          ["駐車場", "駐車場"]
+        ],
+        price: [
+          ["all", "下限なし 〜 上限なし"],
+          ["rent-under-5", "5万円以下"],
+          ["rent-5-8", "5万円〜8万円"],
+          ["rent-8-12", "8万円〜12万円"],
+          ["rent-12-15", "12万円〜15万円"],
+          ["rent-over-15", "15万円以上"]
+        ],
+        layout: [
+          ["all", "すべて"],
+          ["ワンルーム", "ワンルーム"],
+          ["1K", "1K"],
+          ["1DK", "1DK"],
+          ["1LDK", "1LDK"],
+          ["2LDK", "2LDK"],
+          ["3LDK", "3LDK"],
+          ["4LDK以上", "4LDK以上"]
+        ]
+      }
+    };
+
+    const emptyResults = document.createElement("div");
+    emptyResults.className = "empty-results";
+    emptyResults.textContent = "条件に合うサンプル物件が見つかりませんでした。条件を少し広げるか、無料相談をご利用ください。";
+    propertyGrid.after(emptyResults);
+
+    const getSelectedDeal = () => propertySearch.querySelector('input[name="deal"]:checked')?.value || "buy";
+    const getSelectValue = (name) => propertySearch.querySelector(`[name="${name}"]`)?.value || "all";
+    const getSelectedConditions = () => [...propertySearch.querySelectorAll('input[name="condition"]:checked')].map((input) => input.value);
+
+    const replaceSelectOptions = (selectName, options) => {
+      const select = propertySearch.querySelector(`[data-dynamic-select="${selectName}"]`);
+      if (!select) return;
+      select.replaceChildren(
+        ...options.map(([value, label]) => {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = label;
+          return option;
+        })
+      );
+    };
+
+    const updateDynamicControls = (deal) => {
+      const options = searchOptions[deal] || searchOptions.buy;
+      replaceSelectOptions("type", options.type);
+      replaceSelectOptions("price", options.price);
+      replaceSelectOptions("layout", options.layout);
+      const priceLabel = propertySearch.querySelector("[data-price-label]");
+      const summary = propertySearch.querySelector("[data-search-summary]");
+      if (priceLabel) priceLabel.textContent = options.priceLabel;
+      if (summary) summary.textContent = options.summary;
+    };
+
+    const matchesPrice = (value, range) => {
+      if (range === "all") return true;
+      if (range === "buy-under-1000") return value <= 1000;
+      if (range === "buy-1000-2000") return value >= 1000 && value <= 2000;
+      if (range === "buy-2000-3000") return value >= 2000 && value <= 3000;
+      if (range === "buy-3000-5000") return value >= 3000 && value <= 5000;
+      if (range === "buy-over-5000") return value >= 5000;
+      if (range === "rent-under-5") return value <= 5;
+      if (range === "rent-5-8") return value >= 5 && value <= 8;
+      if (range === "rent-8-12") return value >= 8 && value <= 12;
+      if (range === "rent-12-15") return value >= 12 && value <= 15;
+      if (range === "rent-over-15") return value >= 15;
+      return true;
+    };
+
+    const sortCards = () => {
+      const sortValue = sortSelect?.value || "new";
+      const sortedCards = [...propertyCards].sort((a, b) => {
+        if (sortValue === "price-asc") return Number(a.dataset.price) - Number(b.dataset.price);
+        if (sortValue === "price-desc") return Number(b.dataset.price) - Number(a.dataset.price);
+        if (sortValue === "area-desc") return Number(b.dataset.size) - Number(a.dataset.size);
+        return Number(b.dataset.date) - Number(a.dataset.date);
+      });
+      sortedCards.forEach((card) => propertyGrid.append(card));
+    };
+
+    const filterCards = () => {
+      const deal = getSelectedDeal();
+      const area = getSelectValue("area");
+      const type = getSelectValue("type");
+      const price = getSelectValue("price");
+      const layout = getSelectValue("layout");
+      const conditions = getSelectedConditions();
+      const hasNarrowFilter = area !== "all" || type !== "all" || price !== "all" || layout !== "all" || conditions.length > 0;
+      let visibleCards = 0;
+
+      propertyCards.forEach((card) => {
+        const cardConditions = (card.dataset.conditions || "").split(/\s+/).filter(Boolean);
+        const isVisible =
+          card.dataset.deal === deal &&
+          (area === "all" || card.dataset.area === area) &&
+          (type === "all" || card.dataset.type === type) &&
+          (layout === "all" || card.dataset.layout === layout) &&
+          matchesPrice(Number(card.dataset.price), price) &&
+          conditions.every((condition) => cardConditions.includes(condition));
+
+        card.classList.toggle("is-hidden", !isVisible);
+        if (isVisible) visibleCards += 1;
+      });
+
+      const baseCount = searchOptions[deal]?.baseCount || 128;
+      const displayCount = hasNarrowFilter ? (visibleCards ? Math.max(visibleCards * (deal === "buy" ? 14 : 11), visibleCards) : 0) : baseCount;
+
+      if (resultCount) resultCount.textContent = String(displayCount);
+      if (resultNote) {
+        resultNote.textContent = hasNarrowFilter
+          ? `${visibleCards}件のサンプルカードを条件に合わせて表示しています。`
+          : "福岡県内のサンプル物件を表示しています。";
+      }
+      emptyResults.classList.toggle("is-visible", visibleCards === 0);
+    };
+
+    const refreshProperties = () => {
+      sortCards();
+      filterCards();
+    };
+
+    propertySearch.addEventListener("change", (event) => {
+      if (event.target.matches("[data-deal-option]")) {
+        updateDynamicControls(getSelectedDeal());
+      }
+      refreshProperties();
+    });
+
+    propertySearch.addEventListener("submit", (event) => {
+      event.preventDefault();
+      refreshProperties();
+    });
+
+    propertySearch.querySelectorAll("[data-area-quick]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const areaSelect = propertySearch.querySelector('[name="area"]');
+        if (areaSelect) areaSelect.value = button.dataset.areaQuick;
+        refreshProperties();
+      });
+    });
+
+    propertySearch.querySelector("[data-reset-search]")?.addEventListener("click", () => {
+      propertySearch.reset();
+      updateDynamicControls("buy");
+      if (sortSelect) sortSelect.value = "new";
+      refreshProperties();
+    });
+
+    sortSelect?.addEventListener("change", refreshProperties);
+
+    updateDynamicControls(getSelectedDeal());
+    refreshProperties();
+  }
+
+  const favoriteButtons = document.querySelectorAll(".favorite-button");
+  if (favoriteButtons.length) {
+    const storageKey = "harbor-estate-favorites";
+    const storage = (() => {
+      try {
+        return window.localStorage;
+      } catch (error) {
+        return null;
+      }
+    })();
+    let savedFavorites = [];
+
+    try {
+      savedFavorites = storage ? JSON.parse(storage.getItem(storageKey) || "[]") : [];
+    } catch (error) {
+      savedFavorites = [];
+    }
+
+    const favorites = new Set(savedFavorites);
+    const saveFavorites = () => {
+      if (!storage) return;
+      storage.setItem(storageKey, JSON.stringify([...favorites]));
+    };
+
+    favoriteButtons.forEach((button) => {
+      const card = button.closest("[data-property-card]");
+      const propertyId = card?.dataset.id;
+      if (!propertyId) return;
+
+      const setActive = (isActive) => {
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+        button.setAttribute("aria-label", isActive ? "お気に入りから削除" : "お気に入りに追加");
+      };
+
+      setActive(favorites.has(propertyId));
+
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (favorites.has(propertyId)) {
+          favorites.delete(propertyId);
+          setActive(false);
+        } else {
+          favorites.add(propertyId);
+          setActive(true);
+        }
+        saveFavorites();
+      });
+    });
+  }
+
   const fadeTargets = document.querySelectorAll(".fade-up");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
