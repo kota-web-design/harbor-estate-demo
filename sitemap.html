@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HARBOR ESTATEデモサイトのサンプル物件詳細ページです。一部の物件のみ詳細ページを作成しています。">
-  <title>サンプル物件詳細 | HARBOR ESTATE</title>
+  <meta name="description" content="HARBOR ESTATEのサイトマップ。主要ページ、物件ページ、会社情報、法務ページへのリンクを掲載しています。">
+  <title>サイトマップ | HARBOR ESTATE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,11 +13,9 @@
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html" aria-label="HARBOR ESTATE トップへ">
-        <img src="images/logo.png" alt="HARBOR ESTATE">
-      </a>
+      <a class="site-header__logo" href="index.html" aria-label="HARBOR ESTATE トップへ"><img src="images/logo.png" alt="HARBOR ESTATE"></a>
       <nav class="site-nav" id="global-nav" aria-label="グローバルナビゲーション">
-        <a class="site-nav__link" href="properties.html" aria-current="page">物件を探す</a>
+        <a class="site-nav__link" href="properties.html">物件を探す</a>
         <a class="site-nav__link" href="index.html#service">サービス</a>
         <a class="site-nav__link" href="index.html#area">エリア紹介</a>
         <a class="site-nav__link" href="company.html">会社概要</a>
@@ -30,46 +28,72 @@
         <a class="btn btn--primary site-header__cta" href="contact.html">無料相談する</a>
         <a class="site-header__line" href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener"><span data-icon="send" aria-hidden="true"></span><span>LINE相談</span></a>
       </div>
-      <button class="menu-button" type="button" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉する">
-        <span class="menu-button__line"></span>
-        <span class="menu-button__line"></span>
-        <span class="menu-button__line"></span>
-      </button>
+      <button class="menu-button" type="button" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉する"><span class="menu-button__line"></span><span class="menu-button__line"></span><span class="menu-button__line"></span></button>
     </div>
   </header>
 
   <main>
-    <section class="section sample-page">
+    <section class="section legal-page">
       <div class="container">
-        <nav class="breadcrumb" aria-label="パンくず">
-          <a href="index.html">HOME</a>
-          <a href="properties.html">物件を探す</a>
-          <span>サンプル物件詳細</span>
-        </nav>
-
-        <div class="sample-notice fade-up">
-          <span class="section__label">DEMO PROPERTY</span>
-          <h1 class="section__title">この物件詳細は<br>サンプルページです。</h1>
-          <p class="section__lead">本デモサイトでは、一部の物件詳細ページのみ作成しています。その他の物件は、実案件を想定したサンプル表示としてご覧ください。</p>
-          <div class="sample-notice__actions">
-            <a class="btn btn--primary" href="properties.html">物件一覧へ戻る</a>
-            <a class="btn" href="contact.html">お問い合わせする</a>
-          </div>
+        <nav class="breadcrumb" aria-label="パンくず"><a href="index.html">HOME</a><span>サイトマップ</span></nav>
+        <div class="legal-header">
+          <span class="section__label">SITEMAP</span>
+          <h1 class="page-title">サイトマップ</h1>
+          <p class="section__lead">HARBOR ESTATEの主要ページを一覧でご確認いただけます。物件探し、会社情報、お問い合わせまで迷わずアクセスできます。</p>
         </div>
 
-        <div class="sample-card-grid fade-up">
-          <a class="sample-card" href="property-detail.html">
-            <img src="images/properties/house01.jpg" alt="売買詳細サンプルの新築戸建て外観">
-            <span class="badge">売買詳細</span>
-            <h2>海まで徒歩3分のデザイナーズハウス</h2>
-            <p>価格、物件概要、設備、周辺環境、購入相談の導線まで確認できます。</p>
-          </a>
-          <a class="sample-card" href="property-rent-detail.html">
-            <img src="images/properties/house03.jpg" alt="賃貸詳細サンプルの明るいレジデンス室内">
-            <span class="badge">賃貸詳細</span>
-            <h2>福岡市西区今宿 海を望む賃貸レジデンス</h2>
-            <p>賃料、敷金礼金、初期費用、入居条件など賃貸らしい情報を掲載しています。</p>
-          </a>
+        <div class="sitemap-grid fade-up">
+          <section class="sitemap-card">
+            <h2>主要ページ</h2>
+            <ul>
+              <li><a href="index.html">トップページ</a></li>
+              <li><a href="properties.html">物件一覧</a></li>
+              <li><a href="company.html">会社概要</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </section>
+          <section class="sitemap-card">
+            <h2>物件ページ</h2>
+            <ul>
+              <li><a href="property-detail.html">売買物件詳細サンプル</a></li>
+              <li><a href="property-rent-detail.html">賃貸物件詳細サンプル</a></li>
+              <li><a href="property-unavailable.html">サンプル物件詳細</a></li>
+            </ul>
+          </section>
+          <section class="sitemap-card">
+            <h2>トップページ内</h2>
+            <ul>
+              <li><a href="index.html#service">サービス</a></li>
+              <li><a href="index.html#area">エリア紹介</a></li>
+              <li><a href="index.html#properties">おすすめ物件</a></li>
+              <li><a href="index.html#faq">よくあるご質問</a></li>
+            </ul>
+          </section>
+          <section class="sitemap-card">
+            <h2>会社情報</h2>
+            <ul>
+              <li><a href="company.html#staff">スタッフ紹介</a></li>
+              <li><a href="company.html">代表メッセージ</a></li>
+              <li><a href="company.html">アクセス</a></li>
+            </ul>
+          </section>
+          <section class="sitemap-card">
+            <h2>法務ページ</h2>
+            <ul>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="law.html">特定商取引法に基づく表記</a></li>
+              <li><a href="sitemap.html" aria-current="page">サイトマップ</a></li>
+            </ul>
+          </section>
+          <section class="sitemap-card">
+            <h2>ご相談</h2>
+            <ul>
+              <li><a href="contact.html">無料相談フォーム</a></li>
+              <li><a href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener">公式LINE</a></li>
+              <li><a href="tel:0921234567">092-123-4567</a></li>
+              <li><a href="mailto:info@example.com">info@example.com</a></li>
+            </ul>
+          </section>
         </div>
       </div>
     </section>
@@ -118,20 +142,14 @@
         <div class="site-footer__legal">
           <a class="site-footer__small" href="privacy.html">プライバシーポリシー</a>
           <a class="site-footer__small" href="law.html">特定商取引法に基づく表記</a>
-          <a class="site-footer__small" href="sitemap.html">サイトマップ</a>
+          <a class="site-footer__small" href="sitemap.html" aria-current="page">サイトマップ</a>
         </div>
         <p class="site-footer__small">© HARBOR ESTATE All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
-  <nav class="bottom-nav" aria-label="スマートフォン用メニュー">
-    <a href="index.html"><span data-icon="home" aria-hidden="true"></span>ホーム</a>
-    <a href="properties.html"><span data-icon="search" aria-hidden="true"></span>物件を探す</a>
-    <a href="properties.html"><span data-icon="heart" aria-hidden="true"></span>お気に入り</a>
-    <a href="contact.html"><span data-icon="messageCircle" aria-hidden="true"></span>相談する</a>
-    <a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a>
-  </nav>
+  <nav class="bottom-nav" aria-label="スマートフォン用メニュー"><a href="index.html"><span data-icon="home" aria-hidden="true"></span>ホーム</a><a href="properties.html"><span data-icon="search" aria-hidden="true"></span>物件を探す</a><a href="properties.html"><span data-icon="heart" aria-hidden="true"></span>お気に入り</a><a href="contact.html"><span data-icon="messageCircle" aria-hidden="true"></span>相談する</a><a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a></nav>
 
   <script src="main.js?v=line-20260604"></script>
 </body>

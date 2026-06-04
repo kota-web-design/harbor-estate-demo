@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=detail-20260604">
+  <link rel="stylesheet" href="style.css?v=line-20260604">
 </head>
 <body>
   <header class="site-header">
@@ -24,8 +24,12 @@
         <a class="site-nav__link" href="company.html#staff">スタッフ紹介</a>
         <a class="site-nav__link" href="index.html#news">お知らせ</a>
         <a class="site-nav__link" href="contact.html" aria-current="page">お問い合わせ</a>
+        <a class="site-nav__link site-nav__link--line" href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener">LINE相談</a>
       </nav>
-      <a class="btn btn--primary site-header__cta" href="contact.html">無料相談する</a>
+      <div class="site-header__actions">
+        <a class="btn btn--primary site-header__cta" href="contact.html">無料相談する</a>
+        <a class="site-header__line" href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener"><span data-icon="send" aria-hidden="true"></span><span>LINE相談</span></a>
+      </div>
       <button class="menu-button" type="button" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉する">
         <span class="menu-button__line"></span>
         <span class="menu-button__line"></span>
@@ -51,28 +55,24 @@
 
     <section class="section">
       <div class="container">
-        <div class="section__head">
-          <div>
-            <span class="section__label">CONTACT TYPE</span>
-            <h2 class="section__title">ご相談内容をお選びください</h2>
-            <p class="section__lead">複数選択も可能です。内容に合わせて担当スタッフよりご連絡いたします。</p>
-          </div>
-        </div>
-        <div class="contact-options fade-up">
-          <label class="option-card"><input type="checkbox" name="type" checked><span class="option-card__icon" data-icon="home" aria-hidden="true"></span><span>物件を探してほしい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="search" aria-hidden="true"></span><span>購入について相談したい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="yen" aria-hidden="true"></span><span>売却について相談したい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="hammer" aria-hidden="true"></span><span>リノベーションについて相談したい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="building" aria-hidden="true"></span><span>資産活用について相談したい</span></label>
-          <label class="option-card"><input type="checkbox" name="type"><span class="option-card__icon" data-icon="messageCircle" aria-hidden="true"></span><span>その他のお問い合わせ</span></label>
-        </div>
-
         <div class="contact-form-wrap fade-up" id="contact-form">
           <form class="form-grid" action="#" method="post">
             <div>
               <span class="section__label">FORM</span>
-              <h2 class="section__title" style="font-size: 30px;">お問い合わせフォーム</h2>
+              <h2 class="section__title contact-form-title">お問い合わせフォーム</h2>
+              <p class="section__lead">ご相談内容を選択のうえ、必要事項をご入力ください。複数選択も可能です。</p>
             </div>
+            <fieldset class="form-field contact-type-field">
+              <legend class="form-field__label">ご相談内容 <span class="form-field__required">必須</span></legend>
+              <div class="contact-options contact-options--in-form">
+                <label class="option-card"><input type="checkbox" name="type[]" checked><span class="option-card__icon" data-icon="home" aria-hidden="true"></span><span>物件を探してほしい</span></label>
+                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="search" aria-hidden="true"></span><span>購入について相談したい</span></label>
+                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="yen" aria-hidden="true"></span><span>売却について相談したい</span></label>
+                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="hammer" aria-hidden="true"></span><span>リノベーションについて相談したい</span></label>
+                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="building" aria-hidden="true"></span><span>資産活用について相談したい</span></label>
+                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="messageCircle" aria-hidden="true"></span><span>その他のお問い合わせ</span></label>
+              </div>
+            </fieldset>
             <label class="form-field">
               <span class="form-field__label">お名前 <span class="form-field__required">必須</span></span>
               <input class="form-control" type="text" name="name" placeholder="例）佐藤 健太" autocomplete="name" required>
@@ -125,7 +125,7 @@
               </label>
             </div>
             <div class="checkbox-line">
-              <label><input type="checkbox" name="privacy" required>プライバシーポリシーに同意する <span class="form-field__required">必須</span></label>
+              <label><input type="checkbox" name="privacy" required><a href="privacy.html">プライバシーポリシー</a>に同意する <span class="form-field__required">必須</span></label>
             </div>
             <button class="btn btn--primary btn--block" type="submit">確認画面へ進む</button>
           </form>
@@ -141,6 +141,14 @@
               <p class="card-text">お電話でのお問い合わせも受け付けております</p>
               <a class="phone-card__tel" href="tel:0921234567">092-123-4567</a>
               <p class="card-text">受付時間 / 10:00-18:00　定休日 / 水曜日</p>
+            </div>
+            <div class="line-consult-card">
+              <span class="line-consult-card__icon" data-icon="send" aria-hidden="true"></span>
+              <div>
+                <h3 class="card-title">LINEで気軽に相談する</h3>
+                <p class="card-text">物件の希望条件や内覧希望日を、すきま時間に送っていただけます。</p>
+              </div>
+              <a class="btn btn--line btn--block" href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener">公式LINEで相談する</a>
             </div>
           </aside>
         </div>
@@ -198,10 +206,11 @@
       <div class="cta-band__inner">
         <div>
           <h2 class="cta-band__title">理想の暮らしを、<br>一緒に探しませんか？</h2>
-          <p class="cta-band__lead">フォームでもお電話でも、お気軽にお問い合わせください。</p>
+          <p class="cta-band__lead">フォーム・LINE・お電話から、お気軽にお問い合わせください。</p>
         </div>
         <div class="cta-band__actions">
           <a class="btn btn--primary" href="#contact-form">フォームで相談する</a>
+          <a class="btn btn--line" href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener">LINEで相談する</a>
           <a class="btn btn--ghost" href="tel:0921234567">092-123-4567</a>
         </div>
       </div>
@@ -211,13 +220,50 @@
   <footer class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__grid">
-        <div><img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE"><p class="site-footer__text">福岡県内の主要エリアの住まい探しはHARBOR ESTATEにお任せください。</p><div class="sns-list" aria-label="SNSリンク"><a href="#" aria-label="Instagram" data-icon="instagram"></a><a href="#" aria-label="LINE" data-icon="send"></a><a href="#" aria-label="YouTube" data-icon="youtube"></a><a href="mailto:info@example.com" aria-label="メール" data-icon="mail"></a></div></div>
-        <div><h3 class="site-footer__heading">物件を探す</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="properties.html">買う（戸建て）</a></li><li><a class="site-footer__link" href="properties.html">買う（マンション）</a></li><li><a class="site-footer__link" href="properties.html">借りる</a></li><li><a class="site-footer__link" href="properties.html">売却をご検討の方へ</a></li></ul></div>
-        <div><h3 class="site-footer__heading">サービス</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="index.html#service">購入サポート</a></li><li><a class="site-footer__link" href="index.html#service">売却サポート</a></li><li><a class="site-footer__link" href="index.html#service">リノベーション提案</a></li><li><a class="site-footer__link" href="index.html#service">住宅ローン相談</a></li></ul></div>
-        <div><h3 class="site-footer__heading">対応エリア</h3><ul class="site-footer__links"><li><a class="site-footer__link" href="index.html#area">福岡市地域</a></li><li><a class="site-footer__link" href="index.html#area">北九州地域</a></li><li><a class="site-footer__link" href="index.html#area">筑後地域</a></li><li><a class="site-footer__link" href="index.html#area">筑豊地域</a></li></ul></div>
-        <div class="footer-contact"><h3 class="site-footer__heading">お気軽にお問い合わせください</h3><a class="footer-contact__tel" href="tel:0921234567">092-123-4567</a><p class="site-footer__small">受付時間 / 10:00-18:00　定休日 / 水曜</p><a class="btn btn--ghost btn--block" href="contact.html">お問い合わせ</a><a class="btn btn--line btn--block" href="contact.html">LINEで相談する</a></div>
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="images/logo.png" alt="HARBOR ESTATE">
+          <p class="site-footer__text">福岡県内の主要エリアの住まい探しはHARBOR ESTATEにお任せください。</p>
+          <div class="sns-list" aria-label="SNSリンク">
+            <a href="#" aria-label="Instagram" data-icon="instagram"></a>
+            <a href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener" aria-label="LINE公式アカウント" data-icon="send"></a>
+            <a href="mailto:info@example.com" aria-label="メール" data-icon="mail"></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="site-footer__heading">サイトメニュー</h3>
+          <ul class="site-footer__links">
+            <li><a class="site-footer__link" href="index.html">トップページ</a></li>
+            <li><a class="site-footer__link" href="properties.html">物件を探す</a></li>
+            <li><a class="site-footer__link" href="company.html">会社概要</a></li>
+            <li><a class="site-footer__link" href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="site-footer__heading">対応エリア</h3>
+          <ul class="site-footer__links">
+            <li><a class="site-footer__link" href="index.html#area">福岡市地域</a></li>
+            <li><a class="site-footer__link" href="index.html#area">北九州地域</a></li>
+            <li><a class="site-footer__link" href="index.html#area">筑後地域</a></li>
+            <li><a class="site-footer__link" href="index.html#area">筑豊地域</a></li>
+            <li><a class="site-footer__link" href="properties.html">その他地域</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="site-footer__heading">ご相談はこちら</h3>
+          <a class="footer-contact__tel" href="tel:0921234567">092-123-4567</a>
+          <p class="site-footer__small">受付時間 / 10:00-18:00　定休日 / 水曜</p>
+          <a class="btn btn--line btn--block" href="https://line.me/R/ti/p/@harborestate" target="_blank" rel="noopener">LINEで相談する</a>
+          <a class="btn btn--ghost btn--block" href="contact.html">フォームで相談する</a>
+        </div>
       </div>
-      <div class="site-footer__bottom"><div class="site-footer__legal"><a class="site-footer__small" href="#">プライバシーポリシー</a><a class="site-footer__small" href="#">特定商取引法に基づく表記</a><a class="site-footer__small" href="#">サイトマップ</a></div><p class="site-footer__small">© HARBOR ESTATE All Rights Reserved.</p></div>
+      <div class="site-footer__bottom">
+        <div class="site-footer__legal">
+          <a class="site-footer__small" href="privacy.html">プライバシーポリシー</a>
+          <a class="site-footer__small" href="law.html">特定商取引法に基づく表記</a>
+          <a class="site-footer__small" href="sitemap.html">サイトマップ</a>
+        </div>
+        <p class="site-footer__small">© HARBOR ESTATE All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
 
@@ -229,6 +275,6 @@
     <a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a>
   </nav>
 
-  <script src="main.js?v=detail-20260604"></script>
+  <script src="main.js?v=line-20260604"></script>
 </body>
 </html>
