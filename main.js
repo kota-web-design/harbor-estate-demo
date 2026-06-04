@@ -283,6 +283,41 @@
       if (summary) summary.textContent = options.summary;
     };
 
+    const setSelectValue = (name, value) => {
+      const select = propertySearch.querySelector(`[name="${name}"]`);
+      if (!select || !value) return;
+      const hasOption = [...select.options].some((option) => option.value === value);
+      if (hasOption) select.value = value;
+    };
+
+    const applyQueryFilters = () => {
+      const params = new URLSearchParams(window.location.search);
+      const requestedDeal = params.get("deal");
+      if (requestedDeal === "buy" || requestedDeal === "rent") {
+        const radio = propertySearch.querySelector(`input[name="deal"][value="${requestedDeal}"]`);
+        if (radio) radio.checked = true;
+      }
+
+      updateDynamicControls(getSelectedDeal());
+      setSelectValue("area", params.get("area"));
+      setSelectValue("type", params.get("type"));
+      setSelectValue("price", params.get("price"));
+      setSelectValue("layout", params.get("layout"));
+
+      const conditions = params.getAll("condition");
+      if (conditions.length) {
+        propertySearch.querySelectorAll('input[name="condition"]').forEach((input) => {
+          input.checked = conditions.includes(input.value);
+        });
+      }
+
+      if (sortSelect && params.get("sort")) {
+        const requestedSort = params.get("sort");
+        const hasSortOption = [...sortSelect.options].some((option) => option.value === requestedSort);
+        if (hasSortOption) sortSelect.value = requestedSort;
+      }
+    };
+
     const matchesPrice = (value, range) => {
       if (range === "all") return true;
       if (range === "buy-under-1000") return value <= 1000;
@@ -379,7 +414,7 @@
 
     sortSelect?.addEventListener("change", refreshProperties);
 
-    updateDynamicControls(getSelectedDeal());
+    applyQueryFilters();
     refreshProperties();
   }
 

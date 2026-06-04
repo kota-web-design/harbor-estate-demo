@@ -458,7 +458,9 @@ figure {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(247, 247, 245, 0.94) 0%, rgba(247, 247, 245, 0.76) 34%, rgba(247, 247, 245, 0.12) 72%);
+  background:
+    linear-gradient(90deg, rgba(247, 247, 245, 0.98) 0%, rgba(247, 247, 245, 0.88) 34%, rgba(247, 247, 245, 0.2) 72%),
+    linear-gradient(180deg, rgba(247, 247, 245, 0.08), rgba(247, 247, 245, 0.24));
 }
 
 .hero__content {
@@ -479,7 +481,7 @@ figure {
 .hero__eyebrow {
   display: inline-block;
   margin-bottom: 22px;
-  color: var(--color-navy);
+  color: var(--color-navy-dark);
   font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 700;
@@ -490,16 +492,17 @@ figure {
   color: var(--color-navy-dark);
   font-family: var(--font-heading);
   font-size: clamp(38px, 6vw, 70px);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.32;
   letter-spacing: 0.02em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
 .hero__lead {
   max-width: 430px;
   margin-top: 22px;
   color: var(--color-navy-dark);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .hero__actions {
@@ -615,24 +618,48 @@ figure {
   letter-spacing: 0.04em;
 }
 
+.properties-page .page-hero {
+  min-height: 300px;
+}
+
+.properties-page .page-hero__inner {
+  min-height: 300px;
+  padding: 52px 0;
+}
+
 .properties-page .page-hero__lead {
   max-width: 520px;
   font-size: clamp(15px, 1.4vw, 18px);
   line-height: 2;
 }
 
+.properties-page main > .section {
+  padding-top: 52px;
+}
+
 .concept-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(32px, 5vw, 76px);
+  width: min(1240px, calc(100% - 40px));
+  grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr);
+  gap: clamp(28px, 3vw, 46px);
   align-items: center;
+}
+
+.concept-grid__image {
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: 0 10px 28px rgba(6, 43, 69, 0.045);
 }
 
 .concept-grid__image img {
   width: 100%;
-  aspect-ratio: 4 / 2.55;
-  object-fit: cover;
-  border-radius: var(--radius-md);
+  aspect-ratio: 1500 / 1049;
+  object-fit: contain;
+  border-radius: inherit;
+  filter: contrast(1.12) saturate(1.06);
 }
 
 .concept-grid__text {
@@ -723,7 +750,7 @@ figure {
 
 .area-card__image img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   transition: transform 0.45s ease;
 }
@@ -1059,11 +1086,9 @@ figure {
 
 .staff-card__image img {
   width: 100%;
-  aspect-ratio: 4 / 3.2;
+  aspect-ratio: 4 / 3.05;
   object-fit: cover;
-  object-position: 62% 22%;
-  transform: scale(1.08);
-  transform-origin: 62% 22%;
+  object-position: center top;
 }
 
 .staff-card__body {
@@ -2379,31 +2404,61 @@ textarea.form-control {
   font-weight: 800;
 }
 
+.company-concept-section {
+  padding: clamp(46px, 5vw, 62px) 0 clamp(54px, 5.5vw, 70px);
+}
+
 .company-concept {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) 300px;
-  gap: 44px;
+  width: min(1320px, calc(100% - 40px));
+  grid-template-columns: minmax(680px, 1.42fr) minmax(360px, 0.78fr);
+  column-gap: clamp(28px, 3.2vw, 48px);
+  row-gap: clamp(18px, 2vw, 26px);
   align-items: center;
+}
+
+.company-concept__image {
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: 0 10px 28px rgba(6, 43, 69, 0.045);
 }
 
 .company-concept__image img {
   width: 100%;
-  aspect-ratio: 4 / 2.8;
-  object-fit: cover;
-  border-radius: var(--radius-md);
+  aspect-ratio: 1500 / 1049;
+  object-fit: contain;
+  border-radius: inherit;
+  filter: contrast(1.12) saturate(1.06);
+  transform: scale(1.035);
+  transform-origin: center;
+}
+
+.company-concept .section__title {
+  font-size: clamp(28px, 2.8vw, 36px);
 }
 
 .values-list {
   display: grid;
-  gap: 24px;
-  padding-left: 34px;
-  border-left: 1px solid var(--color-line);
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding-left: 0;
+  border-left: 0;
 }
 
 .values-list__item {
   display: grid;
   grid-template-columns: 52px 1fr;
   gap: 16px;
+  height: 100%;
+  padding: 22px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: 0 8px 22px rgba(6, 43, 69, 0.04);
 }
 
 .message-box {
@@ -2439,15 +2494,38 @@ textarea.form-control {
 
 .access-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: 0 12px 30px rgba(6, 43, 69, 0.05);
 }
 
 .access-card img {
   width: 100%;
-  aspect-ratio: 4 / 2.8;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: var(--radius-md);
+  border-radius: 0;
+}
+
+.access-card__body {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  padding: clamp(24px, 3vw, 34px);
+}
+
+.access-card__address {
+  margin: 0;
+  color: var(--color-navy-dark);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.85;
+}
+
+.access-card__body .btn {
+  justify-self: start;
+  margin-top: 4px;
 }
 
 .contact-options {
@@ -2645,26 +2723,46 @@ textarea.form-control {
 
 .contact-access {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
 }
 
 .contact-access__card {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 20px;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  overflow: hidden;
   align-items: center;
-  padding: 18px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: var(--color-white);
+  box-shadow: 0 12px 30px rgba(6, 43, 69, 0.05);
 }
 
 .contact-access__card img {
   width: 100%;
-  aspect-ratio: 4 / 2.6;
+  height: 100%;
+  min-height: 280px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
+}
+
+.contact-access__card > div {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  padding: clamp(24px, 3vw, 34px);
+}
+
+.contact-access__address {
+  margin: 0;
+  color: var(--color-navy-dark);
+  font-weight: 700;
+  line-height: 1.85;
+}
+
+.contact-access__card .btn {
+  justify-self: start;
+  margin-top: 4px;
 }
 
 .fade-up {
@@ -2901,6 +2999,10 @@ textarea.form-control {
     min-height: 330px;
   }
 
+  .properties-page .page-hero {
+    min-height: 280px;
+  }
+
   .page-hero__image {
     inset: 0;
   }
@@ -2915,6 +3017,11 @@ textarea.form-control {
     padding: 54px 0 44px;
   }
 
+  .properties-page .page-hero__inner {
+    min-height: 280px;
+    padding: 46px 0 34px;
+  }
+
   .page-title {
     font-size: 38px;
   }
@@ -2927,6 +3034,10 @@ textarea.form-control {
     max-width: 360px;
     font-size: 14px;
     line-height: 1.85;
+  }
+
+  .properties-page main > .section {
+    padding-top: 42px;
   }
 
   .concept-grid,
