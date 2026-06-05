@@ -2218,19 +2218,21 @@ textarea.form-control {
 
 .detail-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.74fr) minmax(340px, 1fr);
-  gap: 30px;
-  align-items: center;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(300px, 1fr);
+  gap: 28px;
+  align-items: start;
 }
 
 .detail-hero__title {
   color: var(--color-navy-dark);
   font-family: var(--font-heading);
-  font-size: clamp(30px, 4vw, 48px);
+  max-width: 12em;
+  font-size: clamp(30px, 3.2vw, 42px);
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.38;
   text-wrap: balance;
-  word-break: keep-all;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .detail-hero__address {
@@ -2270,7 +2272,7 @@ textarea.form-control {
 
 .detail-main-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 11;
   object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
