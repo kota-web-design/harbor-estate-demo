@@ -2382,7 +2382,7 @@ textarea.form-control {
   inset: 0;
   display: none;
   place-items: center;
-  padding: 24px;
+  padding: 24px 24px 58px;
   background: rgba(6, 43, 69, 0.82);
 }
 
@@ -2409,10 +2409,12 @@ textarea.form-control {
 .gallery-modal__nav {
   display: grid;
   place-items: center;
+  padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.28);
   color: var(--color-white);
   background: rgba(6, 43, 69, 0.72);
   backdrop-filter: blur(10px);
+  line-height: 1;
 }
 
 .gallery-modal__close {
@@ -2444,7 +2446,11 @@ textarea.form-control {
 }
 
 .gallery-modal__caption {
-  margin-top: 12px;
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+  left: 0;
+  margin: 0;
   color: rgba(255, 255, 255, 0.86);
   font-size: 13px;
   text-align: center;
@@ -2708,42 +2714,21 @@ body.is-gallery-open {
   line-height: 1.8;
 }
 
-.map-box {
-  position: relative;
-  min-height: 220px;
+.google-map {
   overflow: hidden;
+  margin-top: 14px;
+  margin-bottom: 12px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  background:
-    linear-gradient(90deg, rgba(18, 59, 93, 0.08) 1px, transparent 1px) 0 0 / 34px 34px,
-    linear-gradient(rgba(18, 59, 93, 0.08) 1px, transparent 1px) 0 0 / 34px 34px,
-    #eef3f7;
+  background: #eef3f7;
 }
 
-.map-box::before {
-  content: "";
-  position: absolute;
-  inset: 20% 0 auto;
-  height: 16px;
-  background: rgba(167, 199, 231, 0.55);
-  transform: rotate(-9deg);
-}
-
-.map-box::after {
-  content: "●";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50% 50% 50% 0;
-  color: var(--color-white);
-  font-size: 18px;
-  line-height: 1;
-  background: var(--color-navy);
-  transform: translate(-50%, -60%) rotate(-45deg);
+.google-map iframe {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: 0;
+  filter: saturate(0.92);
 }
 
 .cost-list {
@@ -3939,7 +3924,7 @@ body.is-gallery-open {
   }
 
   .gallery-modal {
-    padding: 18px;
+    padding: 18px 18px 52px;
   }
 
   .gallery-modal__close {

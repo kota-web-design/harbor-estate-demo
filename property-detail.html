@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=detail-gallery-slider-20260605">
+  <link rel="stylesheet" href="style.css?v=detail-google-map-20260605">
 </head>
 <body class="property-detail-page">
   <header class="site-header">
@@ -107,7 +107,7 @@
             <section class="detail-section fade-up">
               <h2 class="detail-section__title">物件概要</h2>
               <dl class="info-table--split">
-                <div class="info-row"><dt>所在地</dt><dd>福岡県福岡市西区今宿東5丁目12-23</dd></div>
+                <div class="info-row"><dt>所在地</dt><dd>福岡県福岡市西区今宿エリア（JR今宿駅周辺）</dd></div>
                 <div class="info-row"><dt>都市計画</dt><dd>市街化調整区域</dd></div>
                 <div class="info-row"><dt>交通</dt><dd>JR筑肥線「今宿」駅 徒歩12分</dd></div>
                 <div class="info-row"><dt>用途地域</dt><dd>無指定</dd></div>
@@ -177,8 +177,8 @@
 
           <aside class="sidebar" aria-label="物件詳細サイドバー">
             <div class="side-card">
-              <h2 class="side-card__title">購入検討・内覧のご相談</h2>
-              <p class="card-text">現地での見え方、月々の支払い、購入までの流れを一つずつ整理しながらご案内します。</p>
+              <h2 class="side-card__title">この物件のご相談</h2>
+              <p class="card-text">内覧予約、資金計画、似た条件の住まい探しまで、購入検討に必要なことをまとめてご相談いただけます。</p>
               <a class="btn btn--primary btn--block" href="contact.html">内覧予約をする</a>
               <a class="btn btn--block" href="contact.html">資金計画を相談する</a>
               <a class="btn btn--block" href="contact.html">この物件について問い合わせる</a>
@@ -186,9 +186,11 @@
             </div>
             <div class="side-card">
               <h2 class="side-card__title">物件所在地</h2>
-              <p class="card-text">福岡県福岡市西区今宿東5丁目12-23</p>
-              <div class="map-box" aria-label="物件所在地の地図" style="margin-top: 14px;"></div>
-              <a class="btn btn--block" href="https://www.google.com/maps" target="_blank" rel="noopener">Google Mapで見る</a>
+              <p class="card-text"><strong>福岡県福岡市西区今宿エリア</strong><br>架空物件のため、地図上ではJR筑肥線「今宿」駅周辺を表示しています。</p>
+              <div class="google-map" aria-label="JR今宿駅周辺のGoogle Map">
+                <iframe title="JR今宿駅周辺のGoogle Map" src="https://www.google.com/maps?q=JR%E4%BB%8A%E5%AE%BF%E9%A7%85&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <a class="btn btn--block" href="https://www.google.com/maps/search/?api=1&query=JR%E4%BB%8A%E5%AE%BF%E9%A7%85" target="_blank" rel="noopener">Google Mapで見る</a>
             </div>
             <div class="side-card">
               <h2 class="side-card__title">この物件を見た人は<br>こんな物件も見ています</h2>
@@ -208,11 +210,6 @@
               </div>
               <a class="btn btn--block" href="properties.html">一覧に戻る</a>
             </div>
-            <div class="side-card side-card--navy">
-              <h2 class="side-card__title">似た条件の住まいを<br>相談する</h2>
-              <p class="card-text">掲載中の物件だけでなく、ご希望条件に近い住まい情報もご提案しています。</p>
-              <a class="btn btn--ghost btn--block" href="contact.html">無料で相談する</a>
-            </div>
           </aside>
         </div>
       </div>
@@ -222,11 +219,11 @@
       <div class="container">
         <div class="wide-cta fade-up">
           <div>
-            <h2 class="section__title">購入前の不安も、<br>お気軽にご相談ください。</h2>
-            <p class="section__lead">内覧予約から資金計画、購入までの流れまで、無理のない進め方をご提案します。</p>
+            <h2 class="section__title">この物件とあわせて、<br>他の住まいも比較できます。</h2>
+            <p class="section__lead">価格帯やエリア、駅距離の近い物件も一覧で確認できます。気になる条件を変えながら、無理なく比べてみてください。</p>
             <div class="hero__actions">
-              <a class="btn btn--primary" href="contact.html">内覧予約をする</a>
-              <a class="btn" href="contact.html">資金計画を相談する</a>
+              <a class="btn btn--primary" href="properties.html">物件一覧へ戻る</a>
+              <a class="btn" href="properties.html">条件を変えて探す</a>
             </div>
           </div>
           <div class="wide-cta__image"><img src="images/hero-1.jpg" alt="海を望む明るい住まい" loading="lazy" decoding="async"></div>
