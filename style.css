@@ -686,14 +686,18 @@ figure {
 }
 
 .service-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .service-card {
   display: grid;
-  gap: 16px;
-  min-height: 224px;
-  padding: 30px 24px 24px;
+  grid-template-columns: 62px minmax(0, 1fr);
+  column-gap: 22px;
+  row-gap: 12px;
+  align-items: start;
+  min-height: 286px;
+  padding: 30px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: var(--color-white);
@@ -719,6 +723,12 @@ figure {
   background: var(--color-soft-blue);
 }
 
+.service-card__icon {
+  grid-row: 1 / span 5;
+  width: 62px;
+  height: 62px;
+}
+
 .service-card__title,
 .card-title {
   color: var(--color-navy-dark);
@@ -732,6 +742,61 @@ figure {
 .card-text {
   color: var(--color-muted);
   font-size: 14px;
+}
+
+.service-card__text {
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.service-card__list {
+  display: grid;
+  gap: 7px;
+  margin-top: 2px;
+}
+
+.service-card__list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--color-main);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-card__list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent-blue);
+  transform: translateY(-50%);
+}
+
+.service-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.service-card__tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  color: var(--color-navy);
+  font-size: 12px;
+  font-weight: 700;
+  background: #edf5fb;
+}
+
+.service-card .link-arrow {
+  justify-self: start;
+  margin-top: 4px;
 }
 
 .service-detail-page .page-hero__lead {
@@ -3532,13 +3597,28 @@ textarea.form-control {
   }
 
   .service-card {
+    grid-template-columns: 1fr;
     min-height: auto;
     justify-items: center;
     text-align: center;
   }
 
   .service-card__icon {
+    grid-row: auto;
     margin-inline: auto;
+  }
+
+  .service-card__list {
+    width: min(100%, 320px);
+    text-align: left;
+  }
+
+  .service-card__tags {
+    justify-content: center;
+  }
+
+  .service-card .link-arrow {
+    justify-self: center;
   }
 
   .service-card .link-arrow {
