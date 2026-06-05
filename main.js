@@ -165,6 +165,135 @@
     });
   });
 
+  const detailGalleries = [...document.querySelectorAll("[data-detail-gallery]")];
+  if (detailGalleries.length) {
+    const modal = document.createElement("div");
+    modal.className = "gallery-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", "物件写真の拡大表示");
+    modal.innerHTML = `
+      <div class="gallery-modal__dialog">
+        <button class="gallery-modal__close" type="button" aria-label="閉じる">×</button>
+        <button class="gallery-modal__nav gallery-modal__nav--prev" type="button" aria-label="前の写真へ">‹</button>
+        <img class="gallery-modal__image" src="" alt="">
+        <button class="gallery-modal__nav gallery-modal__nav--next" type="button" aria-label="次の写真へ">›</button>
+        <p class="gallery-modal__caption"></p>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const modalImage = modal.querySelector(".gallery-modal__image");
+    const modalCaption = modal.querySelector(".gallery-modal__caption");
+    const modalClose = modal.querySelector(".gallery-modal__close");
+    const modalPrev = modal.querySelector(".gallery-modal__nav--prev");
+    const modalNext = modal.querySelector(".gallery-modal__nav--next");
+    let activeGallery = null;
+    let activeItems = [];
+    let activeIndex = 0;
+
+    const getItems = (gallery) => [...gallery.querySelectorAll("[data-gallery-thumb]")];
+
+    const getImageData = (item) => ({
+      src: item.dataset.src || item.querySelector("img")?.getAttribute("src") || "",
+      alt: item.dataset.alt || item.querySelector("img")?.getAttribute("alt") || "物件写真"
+    });
+
+    const setMainImage = (gallery, index, shouldScroll = true) => {
+      const items = getItems(gallery);
+      const item = items[index];
+      const mainImage = gallery.closest(".detail-main")?.querySelector("[data-gallery-main]");
+      if (!item || !mainImage) return;
+      const image = getImageData(item);
+      mainImage.src = image.src;
+      mainImage.alt = image.alt;
+      items.forEach((thumb, thumbIndex) => {
+        const isActive = thumbIndex === index;
+        thumb.classList.toggle("is-active", isActive);
+        if (isActive) {
+          thumb.setAttribute("aria-current", "true");
+        } else {
+          thumb.removeAttribute("aria-current");
+        }
+      });
+      if (shouldScroll) {
+        item.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    };
+
+    const updateModal = () => {
+      const item = activeItems[activeIndex];
+      if (!item) return;
+      const image = getImageData(item);
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      modalCaption.textContent = `${activeIndex + 1} / ${activeItems.length}`;
+      if (activeGallery) {
+        setMainImage(activeGallery, activeIndex);
+      }
+    };
+
+    const openModal = (gallery, index) => {
+      activeGallery = gallery;
+      activeItems = getItems(gallery);
+      activeIndex = index;
+      updateModal();
+      modal.classList.add("is-open");
+      document.body.classList.add("is-gallery-open");
+      modalClose.focus();
+    };
+
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      document.body.classList.remove("is-gallery-open");
+    };
+
+    const moveModal = (direction) => {
+      if (!activeItems.length) return;
+      activeIndex = (activeIndex + direction + activeItems.length) % activeItems.length;
+      updateModal();
+    };
+
+    detailGalleries.forEach((gallery) => {
+      const items = getItems(gallery);
+      const mainOpen = gallery.closest(".detail-main")?.querySelector("[data-gallery-open]");
+      const thumbs = gallery.querySelector("[data-gallery-thumbs]");
+
+      items.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          setMainImage(gallery, index);
+          openModal(gallery, index);
+        });
+      });
+
+      mainOpen?.addEventListener("click", () => {
+        const currentIndex = Math.max(0, items.findIndex((item) => item.classList.contains("is-active")));
+        openModal(gallery, currentIndex);
+      });
+
+      gallery.querySelectorAll("[data-gallery-scroll]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (!thumbs) return;
+          const direction = button.dataset.galleryScroll === "next" ? 1 : -1;
+          thumbs.scrollBy({ left: direction * thumbs.clientWidth * 0.78, behavior: "smooth" });
+        });
+      });
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    modalPrev.addEventListener("click", () => moveModal(-1));
+    modalNext.addEventListener("click", () => moveModal(1));
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (!modal.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeModal();
+      if (event.key === "ArrowLeft") moveModal(-1);
+      if (event.key === "ArrowRight") moveModal(1);
+    });
+  }
+
   const propertySearch = document.querySelector("[data-property-search]");
   const propertyGrid = document.querySelector("[data-property-grid]");
   const propertyCards = propertyGrid ? [...propertyGrid.querySelectorAll("[data-property-card]")] : [];

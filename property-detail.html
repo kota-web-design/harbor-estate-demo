@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=detail-hero-fix-20260605">
+  <link rel="stylesheet" href="style.css?v=detail-gallery-slider-20260605">
 </head>
 <body class="property-detail-page">
   <header class="site-header">
@@ -62,17 +62,29 @@
               </div>
               <div>
                 <figure class="detail-main-image">
-                  <img src="images/fukuokashi_house.jpg" alt="海まで徒歩3分のデザイナーズハウス外観">
+                  <button class="detail-main-image__button" type="button" data-gallery-open aria-label="物件写真を拡大表示する">
+                    <img src="images/staff-01.jpg" alt="差し替え予定の売買物件メイン写真" data-gallery-main>
+                    <span class="detail-main-image__hint">クリックで拡大</span>
+                  </button>
                 </figure>
               </div>
             </div>
 
-            <div class="thumb-gallery fade-up" aria-label="サムネイルギャラリー">
-              <img src="images/hero-1.jpg" alt="海を望むリビング">
-              <img src="images/hero-3.jpg" alt="景色を眺めるワークスペース">
-              <img src="images/hero-4.jpg" alt="ペットと過ごせる明るいリビング">
-              <img src="images/hero-2.jpg" alt="海を望むテラスリビング">
-              <img src="images/lifestyle-04.jpg" alt="リノベーションされた落ち着いた室内">
+            <div class="detail-photo-slider fade-up" data-detail-gallery aria-label="物件写真ギャラリー">
+              <button class="detail-photo-slider__nav detail-photo-slider__nav--prev" type="button" data-gallery-scroll="prev" aria-label="前の写真へ">‹</button>
+              <div class="thumb-gallery" data-gallery-thumbs>
+                <button class="thumb-gallery__item is-active" type="button" data-gallery-thumb data-src="images/staff-01.jpg" data-alt="差し替え予定の売買物件写真 1" aria-current="true"><img src="images/staff-01.jpg" alt="差し替え予定の売買物件写真 1"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/staff-02.jpg" data-alt="差し替え予定の売買物件写真 2"><img src="images/staff-02.jpg" alt="差し替え予定の売買物件写真 2"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/staff-03.jpg" data-alt="差し替え予定の売買物件写真 3"><img src="images/staff-03.jpg" alt="差し替え予定の売買物件写真 3"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/staff-04.jpg" data-alt="差し替え予定の売買物件写真 4"><img src="images/staff-04.jpg" alt="差し替え予定の売買物件写真 4"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/contact-staff.jpg" data-alt="差し替え予定の売買物件写真 5"><img src="images/contact-staff.jpg" alt="差し替え予定の売買物件写真 5"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/staff-01.jpg" data-alt="差し替え予定の売買物件写真 6"><img src="images/staff-01.jpg" alt="差し替え予定の売買物件写真 6"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/staff-02.jpg" data-alt="差し替え予定の売買物件写真 7"><img src="images/staff-02.jpg" alt="差し替え予定の売買物件写真 7"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/staff-03.jpg" data-alt="差し替え予定の売買物件写真 8"><img src="images/staff-03.jpg" alt="差し替え予定の売買物件写真 8"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/staff-04.jpg" data-alt="差し替え予定の売買物件写真 9"><img src="images/staff-04.jpg" alt="差し替え予定の売買物件写真 9"></button>
+                <button class="thumb-gallery__item" type="button" data-gallery-thumb data-src="images/contact-staff.jpg" data-alt="差し替え予定の売買物件写真 10"><img src="images/contact-staff.jpg" alt="差し替え予定の売買物件写真 10"></button>
+              </div>
+              <button class="detail-photo-slider__nav detail-photo-slider__nav--next" type="button" data-gallery-scroll="next" aria-label="次の写真へ">›</button>
             </div>
 
             <section class="detail-section detail-section--highlight fade-up">
@@ -161,17 +173,6 @@
               </div>
             </section>
 
-            <section class="detail-section fade-up">
-              <h2 class="detail-section__title">ギャラリー</h2>
-              <div class="gallery-grid">
-                <img src="images/hero-1.jpg" alt="リビングから海を望む眺め">
-                <img src="images/hero-3.jpg" alt="自然光が入るワークスペース">
-                <img src="images/hero-4.jpg" alt="ペットと暮らせるリビング">
-                <img src="images/hero-2.jpg" alt="海を望むテラス">
-                <img src="images/lifestyle-04.jpg" alt="木の質感を活かしたリノベーション空間">
-              </div>
-              <p style="margin-top: 18px;"><a class="btn" href="contact.html">写真・資料について問い合わせる</a></p>
-            </section>
           </article>
 
           <aside class="sidebar" aria-label="物件詳細サイドバー">
@@ -287,6 +288,6 @@
     <a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a>
   </nav>
 
-  <script src="main.js?v=buy-detail-brushup-20260604"></script>
+  <script src="main.js?v=detail-gallery-slider-20260605"></script>
 </body>
 </html>
