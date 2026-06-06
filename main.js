@@ -547,58 +547,6 @@
     refreshProperties();
   }
 
-  const favoriteButtons = document.querySelectorAll(".favorite-button");
-  if (favoriteButtons.length) {
-    const storageKey = "harbor-estate-favorites";
-    const storage = (() => {
-      try {
-        return window.localStorage;
-      } catch (error) {
-        return null;
-      }
-    })();
-    let savedFavorites = [];
-
-    try {
-      savedFavorites = storage ? JSON.parse(storage.getItem(storageKey) || "[]") : [];
-    } catch (error) {
-      savedFavorites = [];
-    }
-
-    const favorites = new Set(savedFavorites);
-    const saveFavorites = () => {
-      if (!storage) return;
-      storage.setItem(storageKey, JSON.stringify([...favorites]));
-    };
-
-    favoriteButtons.forEach((button) => {
-      const card = button.closest("[data-property-card]");
-      const propertyId = card?.dataset.id;
-      if (!propertyId) return;
-
-      const setActive = (isActive) => {
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-pressed", String(isActive));
-        button.setAttribute("aria-label", isActive ? "お気に入りから削除" : "お気に入りに追加");
-      };
-
-      setActive(favorites.has(propertyId));
-
-      button.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (favorites.has(propertyId)) {
-          favorites.delete(propertyId);
-          setActive(false);
-        } else {
-          favorites.add(propertyId);
-          setActive(true);
-        }
-        saveFavorites();
-      });
-    });
-  }
-
   const fadeTargets = document.querySelectorAll(".fade-up");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
@@ -610,7 +558,7 @@
           }
         });
       },
-      { threshold: 0.16 }
+      { threshold: 0.08 }
     );
     fadeTargets.forEach((target) => observer.observe(target));
   } else {
