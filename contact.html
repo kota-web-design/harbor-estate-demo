@@ -5,16 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="HARBOR ESTATEへのお問い合わせ。物件探し、購入、売却、リノベーション、資産活用などお気軽にご相談ください。">
   <title>お問い合わせ | HARBOR ESTATE</title>
+  <link rel="canonical" href="https://kota-web-design.github.io/harbor-estate-demo/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HARBOR ESTATE">
+  <meta property="og:title" content="お問い合わせ | HARBOR ESTATE">
+  <meta property="og:description" content="HARBOR ESTATEへのお問い合わせ。物件探し、購入、売却、リノベーション、資産活用などお気軽にご相談ください。">
+  <meta property="og:url" content="https://kota-web-design.github.io/harbor-estate-demo/contact.html">
+  <meta property="og:image" content="https://kota-web-design.github.io/harbor-estate-demo/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HARBOR ESTATEの福岡県内向け住まい提案サイトイメージ">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="お問い合わせ | HARBOR ESTATE">
+  <meta name="twitter:description" content="HARBOR ESTATEへのお問い合わせ。物件探し、購入、売却、リノベーション、資産活用などお気軽にご相談ください。">
+  <meta name="twitter:image" content="https://kota-web-design.github.io/harbor-estate-demo/images/ogp.jpg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=final-check-20260606">
+  <link rel="stylesheet" href="style.css?v=icon-tune-20260608">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html" aria-label="HARBOR ESTATE トップへ">
-        <img src="images/logo.png" alt="HARBOR ESTATE">
+        <img src="images/logo.png" alt="HARBOR ESTATE" loading="eager" decoding="async">
       </a>
       <nav class="site-nav" id="global-nav" aria-label="グローバルナビゲーション">
         <a class="site-nav__link" href="properties.html">物件を探す</a>
@@ -39,7 +55,7 @@
   <main>
     <section class="page-hero">
       <div class="page-hero__image">
-        <img src="images/contact-hero.jpg" alt="住まい相談から理想の暮らしへつながる様子を描いた水彩イラスト" loading="lazy">
+        <img src="images/contact-hero.jpg" alt="住まい相談から理想の暮らしへつながる様子を描いた水彩イラスト" loading="eager" fetchpriority="high" decoding="async">
       </div>
       <div class="page-hero__inner">
         <nav class="breadcrumb" aria-label="パンくず">
@@ -54,7 +70,7 @@
     <section class="section">
       <div class="container">
         <div class="contact-form-wrap fade-up" id="contact-form">
-          <form class="form-grid" action="#" method="post">
+          <form class="form-grid" action="contact-complete.html" method="get">
             <div>
               <span class="section__label">FORM</span>
               <h2 class="section__title contact-form-title">お問い合わせフォーム</h2>
@@ -63,10 +79,10 @@
             <fieldset class="form-field contact-type-field">
               <legend class="form-field__label">ご相談内容 <span class="form-field__required">必須</span></legend>
               <div class="contact-options contact-options--in-form">
-                <label class="option-card"><input type="checkbox" name="type[]" checked><span class="option-card__icon" data-icon="home" aria-hidden="true"></span><span>物件を探してほしい</span></label>
-                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="search" aria-hidden="true"></span><span>購入について相談したい</span></label>
+                <label class="option-card"><input type="checkbox" name="type[]" checked><span class="option-card__icon" data-icon="search" aria-hidden="true"></span><span>物件を探してほしい</span></label>
+                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="home" aria-hidden="true"></span><span>購入について相談したい</span></label>
                 <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="yen" aria-hidden="true"></span><span>売却について相談したい</span></label>
-                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="hammer" aria-hidden="true"></span><span>リノベーションについて相談したい</span></label>
+                <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="paintbrush" aria-hidden="true"></span><span>リノベーションについて相談したい</span></label>
                 <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="building" aria-hidden="true"></span><span>資産活用について相談したい</span></label>
                 <label class="option-card"><input type="checkbox" name="type[]"><span class="option-card__icon" data-icon="messageCircle" aria-hidden="true"></span><span>その他のお問い合わせ</span></label>
               </div>
@@ -138,7 +154,7 @@
             <div class="checkbox-line">
               <label><input type="checkbox" name="privacy" required><a href="privacy.html">プライバシーポリシー</a>に同意する <span class="form-field__required">必須</span></label>
             </div>
-            <button class="btn btn--primary btn--block" type="submit">確認画面へ進む</button>
+            <button class="btn btn--primary btn--block" type="submit">相談内容を送信する</button>
           </form>
 
           <aside class="contact-side" aria-label="お問い合わせ補足">
@@ -279,6 +295,6 @@
     <a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a>
   </nav>
 
-  <script src="main.js?v=final-check-20260606"></script>
+  <script src="main.js?v=icon-tune-20260608"></script>
 </body>
 </html>

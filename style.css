@@ -2802,6 +2802,14 @@ body.is-gallery-open .bottom-nav {
   margin-left: auto;
 }
 
+.sample-notice__note {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
 .sample-notice__actions {
   display: flex;
   flex-wrap: wrap;

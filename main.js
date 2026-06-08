@@ -15,6 +15,18 @@
     filePen: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h6"/><path d="M14 2v6a2 2 0 0 0 2 2h4"/><path d="m16 19 4-4 2 2-4 4h-2v-2Z"/>',
     key: '<circle cx="8" cy="15" r="4"/><path d="M12 15h9"/><path d="M18 15v-3"/><path d="M15 15v-2"/>',
     yen: '<path d="m6 3 6 8 6-8"/><path d="M12 11v10"/><path d="M8 13h8"/><path d="M8 17h8"/>',
+    handshake: '<path d="M8 11 5.5 13.5a3 3 0 0 1-4.2-4.2L6 4.6A4 4 0 0 1 8.8 3.5H12"/><path d="m12 3.5 2.4 2.4a3 3 0 0 0 4.2 0l.9-.9 3.2 3.2-6.4 6.4"/><path d="m7 15 4 4a2 2 0 0 0 2.8 0l4.2-4.2"/><path d="m9.5 12.5 4.5 4.5"/><path d="m12 10 4.5 4.5"/>',
+    suitcase: '<rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M8 12h8"/><path d="M8 16h.01"/><path d="M16 16h.01"/>',
+    paintbrush: '<path d="m14 4 6 6"/><path d="M16 2 7 11l6 6 9-9-6-6Z"/><path d="M7 11c-2 1-3 2.7-3 5.2 0 1.9-1 3-2 3.8 3.5.2 6.5-.8 8-3l3-3"/>',
+    map: '<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"/><path d="M9 3v15"/><path d="M15 6v15"/>',
+    trees: '<path d="M10 18H4l3-4H5l3-4H6l4-6 4 6h-2l3 4h-2l3 4h-6Z"/><path d="M10 18v4"/><path d="M17 22v-5"/><path d="M15 17h6l-3-4h2l-3-4"/>',
+    compass: '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"/>',
+    laptop: '<path d="M5 5h14v10H5z"/><path d="M2 19h20"/><path d="M8 19h8"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.9 4.9 1.4 1.4"/><path d="m17.7 17.7 1.4 1.4"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m4.9 19.1 1.4-1.4"/><path d="m17.7 6.3 1.4-1.4"/>',
+    train: '<path d="M7 3h10a3 3 0 0 1 3 3v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V6a3 3 0 0 1 3-3Z"/><path d="M8 18 6 21"/><path d="m16 18 2 3"/><path d="M8 8h8"/><path d="M8 13h.01"/><path d="M16 13h.01"/>',
+    pawPrint: '<circle cx="5.5" cy="10.5" r="2"/><circle cx="9" cy="6.5" r="2"/><circle cx="15" cy="6.5" r="2"/><circle cx="18.5" cy="10.5" r="2"/><path d="M8 18a4 4 0 0 1 8 0c0 1.7-1.5 3-4 3s-4-1.3-4-3Z"/>',
+    wind: '<path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h16"/><path d="M3 16h10a3 3 0 1 1-3 3"/>',
+    washingMachine: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h.01"/><path d="M12 7h4"/><circle cx="12" cy="14" r="4"/><path d="M9.5 14c1.3-1 3.7 1 5 0"/>',
     heart: '<path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 1 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/>',
     menu: '<path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>',
     grid: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
@@ -176,7 +188,7 @@
       <div class="gallery-modal__dialog">
         <button class="gallery-modal__close" type="button" aria-label="閉じる">×</button>
         <button class="gallery-modal__nav gallery-modal__nav--prev" type="button" aria-label="前の写真へ">‹</button>
-        <img class="gallery-modal__image" src="" alt="">
+        <img class="gallery-modal__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
         <button class="gallery-modal__nav gallery-modal__nav--next" type="button" aria-label="次の写真へ">›</button>
         <p class="gallery-modal__caption"></p>
       </div>
