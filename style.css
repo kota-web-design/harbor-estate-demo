@@ -537,9 +537,27 @@ figure {
   border: 1px solid rgba(18, 59, 93, 0.18);
   border-radius: 50%;
   color: var(--color-navy);
-  font-size: 22px;
+  font-size: 0;
+  line-height: 0;
   background: rgba(255, 255, 255, 0.85);
   box-shadow: var(--shadow-card);
+}
+
+.hero__control::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.hero__control--prev::before {
+  transform: rotate(-135deg);
+}
+
+.hero__control--next::before {
+  transform: rotate(45deg);
 }
 
 .hero__control--prev {
@@ -2360,20 +2378,20 @@ textarea.form-control {
 .gallery-modal__nav::before {
   content: "";
   display: block;
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-top: 2px solid currentColor;
   border-right: 2px solid currentColor;
 }
 
 .detail-photo-slider__nav--prev::before,
 .gallery-modal__nav--prev::before {
-  transform: translateX(2px) rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
 .detail-photo-slider__nav--next::before,
 .gallery-modal__nav--next::before {
-  transform: translateX(-2px) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .gallery-modal {
@@ -2453,7 +2471,7 @@ textarea.form-control {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  font-size: 28px;
+  font-size: 0;
   transform: translateY(-50%);
 }
 
@@ -4133,18 +4151,42 @@ body.is-gallery-open .bottom-nav {
   }
 
   .gallery-modal__nav {
-    position: fixed;
+    position: absolute;
     z-index: 3;
     width: 40px;
     height: 40px;
   }
 
   .gallery-modal__nav--prev {
-    left: calc(env(safe-area-inset-left, 0px) + 14px);
+    left: 8px;
   }
 
   .gallery-modal__nav--next {
-    right: calc(env(safe-area-inset-right, 0px) + 14px);
+    right: 8px;
+  }
+
+  .property-detail-page .environment-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .property-detail-page .environment-item {
+    gap: 7px;
+    min-height: 128px;
+    padding: 14px 10px;
+  }
+
+  .property-detail-page .environment-item__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .property-detail-page .environment-item__name {
+    font-size: 13px;
+  }
+
+  .property-detail-page .environment-item__distance {
+    font-size: 12px;
   }
 
   .point-card {
@@ -4157,7 +4199,7 @@ body.is-gallery-open .bottom-nav {
   }
 
   .property-detail-page .environment-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .property-detail-page .feature-item {

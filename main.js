@@ -186,10 +186,10 @@
     modal.setAttribute("aria-label", "物件写真の拡大表示");
     modal.innerHTML = `
       <div class="gallery-modal__dialog">
-        <button class="gallery-modal__close" type="button" aria-label="閉じる">×</button>
-        <button class="gallery-modal__nav gallery-modal__nav--prev" type="button" aria-label="前の写真へ">‹</button>
+        <button class="gallery-modal__close" type="button" aria-label="閉じる"></button>
+        <button class="gallery-modal__nav gallery-modal__nav--prev" type="button" aria-label="前の写真へ"></button>
         <img class="gallery-modal__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-        <button class="gallery-modal__nav gallery-modal__nav--next" type="button" aria-label="次の写真へ">›</button>
+        <button class="gallery-modal__nav gallery-modal__nav--next" type="button" aria-label="次の写真へ"></button>
         <p class="gallery-modal__caption"></p>
       </div>
     `;
