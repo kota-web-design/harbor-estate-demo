@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Foundation / Design Tokens */
 :root {
   --color-bg: #f7f7f5;
   --color-white: #ffffff;
@@ -23,6 +24,7 @@
   --font-heading: "Zen Kaku Gothic New", "Noto Sans JP", system-ui, sans-serif;
 }
 
+/* Base Elements */
 *,
 *::before,
 *::after {
@@ -94,6 +96,7 @@ figure {
   outline-offset: 3px;
 }
 
+/* Icon System */
 .he-icon {
   display: inline-grid;
   place-items: center;
@@ -116,6 +119,7 @@ figure {
   --icon-size: 20px;
 }
 
+/* Layout / Common Sections */
 .container {
   width: var(--content);
   margin-inline: auto;
@@ -280,6 +284,7 @@ figure {
   background: var(--color-success);
 }
 
+/* Header / Navigation */
 .site-header {
   position: sticky;
   top: 0;
@@ -430,6 +435,7 @@ figure {
   color: var(--color-muted);
 }
 
+/* Top Hero */
 .hero {
   position: relative;
   min-height: calc(100svh - var(--header-height));
@@ -546,6 +552,9 @@ figure {
 .hero__control::before {
   content: "";
   display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 10px;
   height: 10px;
   border-top: 2px solid currentColor;
@@ -553,11 +562,11 @@ figure {
 }
 
 .hero__control--prev::before {
-  transform: rotate(-135deg);
+  transform: translate(-38%, -50%) rotate(-135deg);
 }
 
 .hero__control--next::before {
-  transform: rotate(45deg);
+  transform: translate(-62%, -50%) rotate(45deg);
 }
 
 .hero__control--prev {
@@ -592,6 +601,7 @@ figure {
   background: var(--color-navy);
 }
 
+/* Page Hero */
 .page-hero {
   position: relative;
   overflow: hidden;
@@ -695,6 +705,7 @@ figure {
   max-width: 600px;
 }
 
+/* Shared Card Grids */
 .service-grid,
 .area-grid,
 .property-grid,
@@ -1564,6 +1575,7 @@ a.news-item:hover {
   min-width: min(430px, 100%);
 }
 
+/* Footer */
 .site-footer {
   color: var(--color-white);
   background: linear-gradient(140deg, var(--color-navy-dark), #073b5f);
@@ -1977,6 +1989,7 @@ textarea.form-control {
   resize: vertical;
 }
 
+/* Property List Page */
 .properties-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
@@ -2199,6 +2212,7 @@ textarea.form-control {
   object-position: center;
 }
 
+/* Property Detail Pages */
 .detail-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
@@ -2361,6 +2375,7 @@ textarea.form-control {
 }
 
 .detail-photo-slider__nav {
+  position: relative;
   display: grid;
   place-items: center;
   width: 38px;
@@ -2378,6 +2393,9 @@ textarea.form-control {
 .gallery-modal__nav::before {
   content: "";
   display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 10px;
   height: 10px;
   border-top: 2px solid currentColor;
@@ -2386,14 +2404,15 @@ textarea.form-control {
 
 .detail-photo-slider__nav--prev::before,
 .gallery-modal__nav--prev::before {
-  transform: rotate(-135deg);
+  transform: translate(-38%, -50%) rotate(-135deg);
 }
 
 .detail-photo-slider__nav--next::before,
 .gallery-modal__nav--next::before {
-  transform: rotate(45deg);
+  transform: translate(-62%, -50%) rotate(45deg);
 }
 
+/* Gallery Modal */
 .gallery-modal {
   position: fixed;
   z-index: 200;
@@ -3277,6 +3296,12 @@ body.is-gallery-open .bottom-nav {
   border: 0;
 }
 
+.contact-type-field .form-field__label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
 .radio-group,
 .checkbox-line {
   display: flex;
@@ -3420,6 +3445,7 @@ body.is-gallery-open .bottom-nav {
   margin-top: 4px;
 }
 
+/* Scroll Animation */
 .fade-up {
   opacity: 0;
   transform: translateY(22px);
@@ -3435,6 +3461,7 @@ body.is-gallery-open .bottom-nav {
   display: none;
 }
 
+/* Responsive */
 @media (max-width: 1120px) {
   :root {
     --content: min(960px, calc(100% - 32px));
@@ -3890,7 +3917,20 @@ body.is-gallery-open .bottom-nav {
   }
 
   .contact-options.contact-options--in-form {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .contact-options--in-form .option-card {
+    min-height: 116px;
+    padding: 14px 8px;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .contact-options--in-form .option-card__icon {
+    width: 44px;
+    height: 44px;
   }
 
   .service-card {
@@ -4269,6 +4309,15 @@ body.is-gallery-open .bottom-nav {
     grid-template-columns: 1fr;
   }
 
+  .access-card img,
+  .contact-access__card img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+    background: var(--color-white);
+  }
+
   .google-map iframe {
     max-width: 100%;
   }
@@ -4312,5 +4361,11 @@ body.is-gallery-open .bottom-nav {
   .bottom-nav span {
     --icon-size: 19px;
     line-height: 1;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-options.contact-options--in-form {
+    grid-template-columns: 1fr;
   }
 }

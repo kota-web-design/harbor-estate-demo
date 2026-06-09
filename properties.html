@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="style.css?v=gallery-fix-20260608">
 </head>
 <body class="properties-page">
+  <!-- 共通ヘッダー -->
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html" aria-label="HARBOR ESTATE トップへ">
@@ -52,7 +53,9 @@
     </div>
   </header>
 
+  <!-- メインコンテンツ -->
   <main>
+    <!-- Page Hero -->
     <section class="page-hero">
       <div class="page-hero__image">
         <img src="images/properties/properties_hero.jpg" alt="物件一覧ページの福岡らしい都市と海のイメージ" loading="eager" fetchpriority="high" decoding="async">
@@ -63,6 +66,7 @@
       </div>
     </section>
 
+    <!-- Search / Property List -->
     <section class="section">
       <div class="container">
         <nav class="breadcrumb" aria-label="パンくず">
@@ -70,6 +74,7 @@
           <span>物件を探す</span>
         </nav>
 
+        <!-- Search Form -->
         <form class="search-box fade-up" action="#" method="get" data-property-search>
           <div class="search-box__top">
             <div class="segmented deal-switch" aria-label="取引種別">
@@ -226,6 +231,7 @@
           </div>
         </form>
 
+        <!-- Property Cards / Sidebar -->
         <div class="properties-layout section" style="padding-bottom: 0;">
           <div class="properties-main">
             <div class="properties-main__head">
@@ -339,6 +345,7 @@
           </aside>
         </div>
 
+        <!-- Consultation CTA -->
         <div class="wide-cta wide-cta--consult fade-up">
           <div class="wide-cta__content">
             <span class="section__label">PRIVATE CONSULTATION</span>
@@ -354,6 +361,7 @@
     </section>
   </main>
 
+  <!-- 共通フッター -->
   <footer class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__grid">
@@ -399,6 +407,7 @@
     </div>
   </footer>
 
+  <!-- スマートフォン下部ナビ -->
   <nav class="bottom-nav" aria-label="スマートフォン用メニュー">
     <a href="index.html"><span data-icon="home" aria-hidden="true"></span>ホーム</a>
     <a href="properties.html"><span data-icon="search" aria-hidden="true"></span>物件を探す</a>
@@ -407,6 +416,7 @@
     <a href="#global-nav"><span data-icon="menu" aria-hidden="true"></span>メニュー</a>
   </nav>
 
+  <!-- JavaScript -->
   <script src="main.js?v=gallery-fix-20260608"></script>
 </body>
 </html>

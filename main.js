@@ -1,4 +1,5 @@
 (() => {
+  // Icon SVG registry
   const iconPaths = {
     home: '<path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2V10Z"/>',
     building: '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/>',
@@ -48,6 +49,7 @@
     youtube: '<path d="M22 12s0-3-.4-4.4a3 3 0 0 0-2.1-2.1C17.7 5 12 5 12 5s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1C2 9 2 12 2 12s0 3 .4 4.4a3 3 0 0 0 2.1 2.1C6.3 19 12 19 12 19s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1C22 15 22 12 22 12Z"/><path d="m10 15 5-3-5-3v6Z"/>'
   };
 
+  // Render data-icon placeholders
   const createIconSvg = (name) => {
     const path = iconPaths[name];
     if (!path) return "";
@@ -80,6 +82,7 @@
     prependIcon(button, "send");
   });
 
+  // Header scroll state and mobile menu
   const header = document.querySelector(".site-header");
   const menuButton = document.querySelector(".menu-button");
   const nav = document.querySelector(".site-nav");
@@ -109,6 +112,7 @@
     });
   }
 
+  // Hero slider
   const hero = document.querySelector("[data-hero-slider]");
   if (hero) {
     const slides = [...hero.querySelectorAll(".hero__slide")];
@@ -165,6 +169,7 @@
     start();
   }
 
+  // FAQ accordion
   document.querySelectorAll(".faq-item").forEach((item) => {
     const button = item.querySelector(".faq-item__question");
     const answer = item.querySelector(".faq-item__answer");
@@ -177,6 +182,7 @@
     });
   });
 
+  // Property detail gallery and modal
   const detailGalleries = [...document.querySelectorAll("[data-detail-gallery]")];
   if (detailGalleries.length) {
     const modal = document.createElement("div");
@@ -306,6 +312,7 @@
     });
   }
 
+  // Property search filters and sorting
   const propertySearch = document.querySelector("[data-property-search]");
   const propertyGrid = document.querySelector("[data-property-grid]");
   const propertyCards = propertyGrid ? [...propertyGrid.querySelectorAll("[data-property-card]")] : [];
@@ -559,6 +566,7 @@
     refreshProperties();
   }
 
+  // Fade-up animation
   const fadeTargets = document.querySelectorAll(".fade-up");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
