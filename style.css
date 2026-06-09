@@ -3606,6 +3606,7 @@ body.is-gallery-open .bottom-nav {
   }
 
   body {
+    padding-top: var(--header-height);
     padding-bottom: 64px;
     font-size: 14px;
   }
@@ -3613,8 +3614,6 @@ body.is-gallery-open .bottom-nav {
   main,
   section,
   .container,
-  .site-header,
-  .site-nav,
   .bottom-nav,
   .hero,
   .page-hero,
@@ -3625,6 +3624,20 @@ body.is-gallery-open .bottom-nav {
 
   .section {
     padding: 54px 0;
+  }
+
+  .site-header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    overflow: visible;
+  }
+
+  .site-nav {
+    z-index: 120;
+    background: var(--color-white);
   }
 
   .site-header__inner {
@@ -3754,20 +3767,7 @@ body.is-gallery-open .bottom-nav {
   }
 
   .hero__control {
-    top: 18px;
-    bottom: auto;
-    width: 38px;
-    height: 38px;
-    transform: none;
-    background: rgba(255, 255, 255, 0.92);
-  }
-
-  .hero__control--prev {
-    left: 18px;
-  }
-
-  .hero__control--next {
-    right: 18px;
+    display: none;
   }
 
   .hero__dots {
@@ -4341,7 +4341,7 @@ body.is-gallery-open .bottom-nav {
     display: grid;
     width: 100%;
     max-width: 100vw;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     min-height: 62px;
     border-top: 1px solid var(--color-line);
     background: rgba(255, 255, 255, 0.96);
