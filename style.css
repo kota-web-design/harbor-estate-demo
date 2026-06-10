@@ -3738,7 +3738,7 @@ body.is-gallery-open .bottom-nav {
   }
 
   .hero__slide img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
   }
 
