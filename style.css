@@ -57,6 +57,10 @@ body.is-menu-open {
   display: none;
 }
 
+  .pc-only {
+    display: block;
+  }
+
 
 img {
   display: block;
@@ -2105,6 +2109,7 @@ textarea.form-control {
   font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 700;
+  text-align: center;
 }
 
 .result-count strong {
@@ -2115,6 +2120,7 @@ textarea.form-control {
   margin-top: 3px;
   color: var(--color-muted);
   font-size: 12px;
+   text-align: center;
 }
 
 .sort-tools {
@@ -3730,6 +3736,10 @@ body.is-gallery-open .bottom-nav {
 
   .sp-only {
     display: block;
+  }
+
+   .pc-only {
+    display: none;
   }
 
   main,
