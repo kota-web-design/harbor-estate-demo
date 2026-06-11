@@ -398,6 +398,31 @@
       }
     };
 
+    const sidebarTypeOptions = {
+      buy: {
+        lead: "売買物件の種別ごとに、条件を絞って探せます。",
+        links: [
+          ["すべての売買物件", ""],
+          ["マンション", "マンション"],
+          ["戸建て", "戸建て"],
+          ["土地", "土地"],
+          ["リノベ向き物件", "リノベ向き物件"],
+          ["投資用物件", "投資用物件"]
+        ]
+      },
+      rent: {
+        lead: "賃貸物件の種別ごとに、暮らし方に合うお部屋を探せます。",
+        links: [
+          ["すべての賃貸物件", ""],
+          ["アパート", "アパート"],
+          ["マンション", "マンション"],
+          ["戸建て賃貸", "戸建て賃貸"],
+          ["店舗・事務所", "店舗・事務所"],
+          ["駐車場", "駐車場"]
+        ]
+      }
+    };
+
     const emptyResults = document.createElement("div");
     emptyResults.className = "empty-results";
     emptyResults.textContent = "条件に合うサンプル物件が見つかりませんでした。条件を少し広げるか、無料相談をご利用ください。";
@@ -420,6 +445,42 @@
       );
     };
 
+    const buildPropertiesHref = (params) => {
+      const searchParams = new URLSearchParams();
+      Object.entries(params).forEach(([key, value]) => {
+        if (value) searchParams.set(key, value);
+      });
+      const query = searchParams.toString();
+      return query ? `properties.html?${query}` : "properties.html";
+    };
+
+    const updateSidebarLinks = (deal) => {
+      const typeLead = document.querySelector("[data-sidebar-type-lead]");
+      const typeList = document.querySelector("[data-sidebar-type-list]");
+      const areaList = document.querySelector("[data-sidebar-area-list]");
+      const options = sidebarTypeOptions[deal] || sidebarTypeOptions.buy;
+
+      if (typeLead) typeLead.textContent = options.lead;
+      if (typeList) {
+        typeList.replaceChildren(
+          ...options.links.map(([label, type]) => {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = buildPropertiesHref({ deal, type });
+            link.textContent = label;
+            item.append(link);
+            return item;
+          })
+        );
+      }
+
+      areaList?.querySelectorAll("a").forEach((link) => {
+        const url = new URL(link.getAttribute("href"), window.location.href);
+        const area = url.searchParams.get("area");
+        link.href = buildPropertiesHref({ deal, area });
+      });
+    };
+
     const updateDynamicControls = (deal) => {
       const options = searchOptions[deal] || searchOptions.buy;
       replaceSelectOptions("type", options.type);
@@ -429,6 +490,7 @@
       const summary = propertySearch.querySelector("[data-search-summary]");
       if (priceLabel) priceLabel.textContent = options.priceLabel;
       if (summary) summary.textContent = options.summary;
+      updateSidebarLinks(deal);
     };
 
     const setSelectValue = (name, value) => {

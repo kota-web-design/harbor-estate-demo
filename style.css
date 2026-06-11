@@ -1767,12 +1767,28 @@ a.news-item:hover {
 }
 
 .search-box__row--main {
-  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(190px, 0.9fr);
 }
 
 .search-box__submit {
   min-height: 48px;
   white-space: nowrap;
+}
+
+.search-box__actions {
+  display: grid;
+  gap: 10px;
+}
+
+.search-box__actions .btn {
+  width: 100%;
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+.search-box__reset {
+  min-height: 44px;
+  font-size: 13px;
 }
 
 .segmented {
@@ -4184,6 +4200,7 @@ body.is-gallery-open .bottom-nav {
     min-width: 0;
   }
 
+  .search-box__actions,
   .search-box__submit {
     grid-column: auto;
     width: 100%;

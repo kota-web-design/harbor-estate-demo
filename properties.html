@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=final-polish-20260611">
+  <link rel="stylesheet" href="style.css?v=properties-polish-20260611">
 </head>
 <body class="properties-page">
   <!-- 共通ヘッダー -->
@@ -137,7 +137,10 @@
                 <option value="4LDK以上">4LDK以上</option>
               </select>
             </label>
-            <button class="btn btn--primary search-box__submit" type="submit">この条件で検索する</button>
+            <div class="search-box__actions">
+              <button class="btn btn--primary search-box__submit" type="submit">この条件で検索する</button>
+              <button class="btn btn--ghost search-box__reset" type="button" data-reset-search>条件をリセット</button>
+            </div>
           </div>
 
           <div class="area-selector" aria-label="エリア詳細">
@@ -226,9 +229,6 @@
             </div>
           </details>
 
-          <div class="search-box__foot">
-            <button class="btn btn--ghost" type="button" data-reset-search>条件をリセット</button>
-          </div>
         </form>
 
         <!-- Property Cards / Sidebar -->
@@ -322,7 +322,7 @@
             <div class="side-card">
               <h2 class="side-card__title">エリアから探す</h2>
               <p class="card-text">福岡県内の主要エリアから、暮らし方に合う住まいを探せます。</p>
-              <ul class="side-list" style="margin-top: 12px;">
+              <ul class="side-list" style="margin-top: 12px;" data-sidebar-area-list>
                 <li><a href="properties.html?area=福岡市地域">福岡市地域（42）</a></li>
                 <li><a href="properties.html?area=北九州地域">北九州地域（28）</a></li>
                 <li><a href="properties.html?area=筑後地域">筑後地域（31）</a></li>
@@ -332,8 +332,8 @@
             </div>
             <div class="side-card">
               <h2 class="side-card__title">物件種別から探す</h2>
-              <p class="card-text">売買物件の種別ごとに、条件を絞って探せます。</p>
-              <ul class="side-list" style="margin-top: 12px;">
+              <p class="card-text" data-sidebar-type-lead>売買物件の種別ごとに、条件を絞って探せます。</p>
+              <ul class="side-list" style="margin-top: 12px;" data-sidebar-type-list>
                 <li><a href="properties.html?deal=buy">すべての売買物件</a></li>
                 <li><a href="properties.html?deal=buy&type=マンション">マンション</a></li>
                 <li><a href="properties.html?deal=buy&type=戸建て">戸建て</a></li>
@@ -416,6 +416,6 @@
   </nav>
 
   <!-- JavaScript -->
-  <script src="main.js?v=final-polish-20260611"></script>
+  <script src="main.js?v=properties-polish-20260611"></script>
 </body>
 </html>
