@@ -120,8 +120,17 @@
     const prev = hero.querySelector("[data-slider-prev]");
     const next = hero.querySelector("[data-slider-next]");
     const titleTarget = hero.querySelector("[data-hero-title]");
+    const spTitleMedia = window.matchMedia("(max-width: 760px)");
     let current = 0;
     let timerId;
+
+    const renderHeroTitle = () => {
+      if (!titleTarget || !slides[current]) return;
+      const title = spTitleMedia.matches && slides[current].dataset.spTitle
+        ? slides[current].dataset.spTitle
+        : slides[current].dataset.title;
+      titleTarget.innerHTML = title || "";
+    };
 
     const showSlide = (index) => {
       current = (index + slides.length) % slides.length;
@@ -134,9 +143,7 @@
         dot.classList.toggle("is-active", dotIndex === current);
         dot.setAttribute("aria-selected", String(dotIndex === current));
       });
-      if (titleTarget && slides[current]?.dataset.title) {
-        titleTarget.textContent = slides[current].dataset.title;
-      }
+      renderHeroTitle();
     };
 
     const start = () => {
@@ -165,6 +172,7 @@
       });
     });
 
+    spTitleMedia.addEventListener("change", renderHeroTitle);
     showSlide(0);
     start();
   }
