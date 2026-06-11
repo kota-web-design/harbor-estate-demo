@@ -624,7 +624,7 @@ figure {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, var(--color-bg) 0%, rgba(247, 247, 245, 0.9) 36%, rgba(247, 247, 245, 0.08) 74%);
+  background: linear-gradient(90deg, var(--color-bg) 0%, rgba(247, 247, 245, 0.96) 34%, rgba(247, 247, 245, 0.58) 56%, rgba(247, 247, 245, 0.08) 78%);
 }
 
 .page-hero__inner {
@@ -858,6 +858,7 @@ figure {
   grid-area: tags;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin-top: 2px;
 }
@@ -876,13 +877,32 @@ figure {
 
 .service-card .link-arrow {
   grid-area: link;
-  justify-self: start;
+  justify-self: center;
   margin-top: auto;
   padding-top: 2px;
 }
 
 .service-detail-page .page-hero__lead {
   max-width: 560px;
+}
+
+.service-page-hero {
+  min-height: 420px;
+}
+
+.service-page-hero .page-hero__image {
+  inset: 0 0 0 36%;
+}
+
+.service-page-hero::after {
+  background:
+    linear-gradient(90deg, var(--color-bg) 0%, rgba(247, 247, 245, 0.98) 32%, rgba(247, 247, 245, 0.72) 50%, rgba(247, 247, 245, 0.12) 76%),
+    linear-gradient(180deg, rgba(247, 247, 245, 0.05), rgba(247, 247, 245, 0.14));
+}
+
+.service-page-hero .page-hero__inner {
+  min-height: 420px;
+  padding: 72px 0;
 }
 
 .service-intro {
@@ -2106,6 +2126,14 @@ textarea.form-control {
   margin-top: 10px;
 }
 
+.side-card .card-text {
+  line-height: 1.85;
+}
+
+.side-card .card-text + .btn {
+  margin-top: 16px;
+}
+
 .side-card__title {
   margin-bottom: 16px;
   color: var(--color-navy-dark);
@@ -2963,13 +2991,26 @@ body.is-gallery-open .bottom-nav {
 
 .legal-header {
   max-width: 820px;
+  margin-right: auto;
   margin-bottom: 30px;
+  margin-left: auto;
+  text-align: center;
+}
+
+.legal-header .breadcrumb {
+  justify-content: center;
+}
+
+.legal-header .section__lead {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .legal-content {
   display: grid;
   gap: 22px;
   max-width: 940px;
+  margin-inline: auto;
 }
 
 .legal-card {
@@ -3216,7 +3257,7 @@ body.is-gallery-open .bottom-nav {
 
 .company-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+  grid-template-columns: minmax(0, 0.94fr) minmax(460px, 1.06fr);
   gap: 40px;
 }
 
@@ -3231,7 +3272,8 @@ body.is-gallery-open .bottom-nav {
 
 .access-card img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  min-height: 320px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: 0;
 }
@@ -3462,7 +3504,7 @@ body.is-gallery-open .bottom-nav {
 
 .contact-access__card {
   display: grid;
-  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(440px, 1.15fr) minmax(320px, 0.85fr);
   overflow: hidden;
   align-items: center;
   border: 1px solid var(--color-line);
@@ -3474,8 +3516,8 @@ body.is-gallery-open .bottom-nav {
 .contact-access__card img {
   width: 100%;
   height: 100%;
-  min-height: 280px;
-  aspect-ratio: 16 / 9;
+  min-height: 360px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: 0;
 }
@@ -3856,7 +3898,7 @@ body.is-gallery-open .bottom-nav {
   }
 
   .page-hero::after {
-    background: linear-gradient(180deg, rgba(247, 247, 245, 0.4), var(--color-bg) 82%);
+    background: linear-gradient(180deg, rgba(247, 247, 245, 0.26) 0%, rgba(247, 247, 245, 0.72) 48%, var(--color-bg) 88%);
   }
 
   .page-hero__inner {
@@ -3882,6 +3924,23 @@ body.is-gallery-open .bottom-nav {
     max-width: 360px;
     font-size: 14px;
     line-height: 1.85;
+  }
+
+  .service-page-hero {
+    min-height: 340px;
+  }
+
+  .service-page-hero .page-hero__image {
+    inset: 0;
+  }
+
+  .service-page-hero .page-hero__inner {
+    min-height: 340px;
+    padding: 52px 0 42px;
+  }
+
+  .service-page-hero::after {
+    background: linear-gradient(180deg, rgba(247, 247, 245, 0.2) 0%, rgba(247, 247, 245, 0.76) 48%, var(--color-bg) 90%);
   }
 
   .concept-grid__text,
